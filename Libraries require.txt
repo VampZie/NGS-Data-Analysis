@@ -1,0 +1,3 @@
+Libraries required for Sequencing
+fastqc - Quality check ( sudo apt install fastqc )
+

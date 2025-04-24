@@ -1,0 +1,74 @@
+🧬 RNA-Seq: Downloading FASTQ Files from ENA Using wget
+
+✅ Option 1: Download from European Nucleotide Archive (ENA) using wget
+------------------------------------------------------------
+1. Visit: https://www.ebi.ac.uk/ena/browser/home
+2. Search for your SRR accession (e.g., SRR1551114)
+3. Scroll to the "FASTQ Files" section
+4. Right-click the links to download `*_1.fastq.gz` and `*_2.fastq.gz`
+5. Use wget to download:
+
+Example:
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR155/004/SRR1551114/SRR1551114_1.fastq.gz
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR155/004/SRR1551114/SRR1551114_2.fastq.gz
+
+✅ Option 2: Use Aspera (ascp) for faster downloads (optional)
+------------------------------------------------------------
+- Requires installing IBM Aspera CLI
+- Much faster for large datasets than wget
+
+✅  Unzip and save the uncompressed file
+----------------------------------------
+This will create a plain .fastq file (warning: could be huge).
+gunzip SRR33228995.fastq.gz
+
+If you want to keep both compressed and uncompressed files:
+gzip -d -k SRR33228995.fastq.gz
+-d: decompress
+-k: keep original .gz file
+
+✅ Option 3:Using fasterq-dump (preferred for converting to FASTQ)
+------------------------------------------------------------------
+fasterq-dump SRR33228995 -O ~/fastqrep --temp ~/fasterq_tmp --threads 4
+
+✅ Option 4: Using prefetch (to download the .sra file only)
+------------------------------------------------------------
+prefetch SRR33228995
+
+This will save .sra file to your ~/ncbi/public/sra directory.
+Then convert it with:
+fasterq-dump ~/ncbi/public/sra/SRR33228995.sra -O ~/fastqrep --threads 4
+
+✅ Option 5: Using Curl 
+-----------------------
+
+curl -s "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=SRR1551114&result=read_run&fields=fastq_ftp" | cut -f2
+
+You’ll get back:
+
+ftp.sra.ebi.ac.uk/vol1/fastq/SRR155/004/SRR1551114/SRR1551114_1.fastq.gz;
+ftp.sra.ebi.ac.uk/vol1/fastq/SRR155/004/SRR1551114/SRR1551114_2.fastq.gz
+
+Then download:
+
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR155/004/SRR1551114/SRR1551114_1.fastq.gz
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR155/004/SRR1551114/SRR1551114_2.fastq.gz
+
+=============================================================
+-------------------------------------------------------------
+=============================================================
+
+▶️ Run FastQC on the downloaded files:
+--------------------------------------
+
+fastqc SRR1551114_1.fastq.gz SRR1551114_2.fastq.gz -o ~/fastq_qc_reports
+
+ or
+ 
+fastqc -t 4 -o /home/vzscyborg/rnaseq/fastqc_rep /home/vzcyborg/datasets/rnads/SRR1551114_1.fastq.gz
+
+fastqc - command calling the quality check function 
+-t 4 - t refers to the threads using depanding upon the per core threads
+-o refers the path where the report of the quality check will save followed by the proper path
+SRRxxxxxxxxx.fastq.gz - files on which quality check will run
+
