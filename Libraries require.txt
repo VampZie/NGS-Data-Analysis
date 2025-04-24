@@ -1,3 +1,4 @@
-Libraries required for Sequencing
-fastqc - Quality check ( sudo apt install fastqc )
-
+Libraries required
+			gzip - for unzio ( sudo apt install gzip )
+			fastqc - Quality check ( sudo apt install fastqc )
+			
