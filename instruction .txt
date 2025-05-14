@@ -22,37 +22,13 @@ wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR155/004/SRR1551114/SRR1551114_2.fastq
 This will create a plain .fastq file (warning: could be huge).
 gunzip SRR33228995.fastq.gz
 
-If you want to keep both compressed and uncompressed files:
-gzip -d -k SRR33228995.fastq.gz
--d: decompress
--k: keep original .gz file
+If you want to keep both compressed and uncompressed files: gzip -c <source directory> > <destination directory>
+gzip -c ~/datasets/SRR1551114/zipped/SRR1551114_2.fastq.gz > ~/datasets/SRR1551114/raw/SRR1551114_2.fastq
 
-✅ Option 3:Using fasterq-dump (preferred for converting to FASTQ)
-------------------------------------------------------------------
-fasterq-dump SRR33228995 -O ~/fastqrep --temp ~/fasterq_tmp --threads 4
+-c : you must provide a single input file.
+> : keep original .gz file
 
-✅ Option 4: Using prefetch (to download the .sra file only)
-------------------------------------------------------------
-prefetch SRR33228995
 
-This will save .sra file to your ~/ncbi/public/sra directory.
-Then convert it with:
-fasterq-dump ~/ncbi/public/sra/SRR33228995.sra -O ~/fastqrep --threads 4
-
-✅ Option 5: Using Curl 
------------------------
-
-curl -s "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=SRR1551114&result=read_run&fields=fastq_ftp" | cut -f2
-
-You’ll get back:
-
-ftp.sra.ebi.ac.uk/vol1/fastq/SRR155/004/SRR1551114/SRR1551114_1.fastq.gz;
-ftp.sra.ebi.ac.uk/vol1/fastq/SRR155/004/SRR1551114/SRR1551114_2.fastq.gz
-
-Then download:
-
-wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR155/004/SRR1551114/SRR1551114_1.fastq.gz
-wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR155/004/SRR1551114/SRR1551114_2.fastq.gz
 
 =============================================================
 -------------------------------------------------------------
