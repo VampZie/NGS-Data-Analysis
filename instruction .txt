@@ -14,20 +14,6 @@ wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR155/004/SRR1551114/SRR1551114_1.fastq
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR155/004/SRR1551114/SRR1551114_2.fastq.gz
 
 
-
-🧬 RNA-Seq: Downloading FASTQ Files from NCBI
-=============================================
-
-OPTION 1: Use SRA ( Sequence Read Archieve ) -Tool
---------------------------------------------------
-Tool: sra-toolkit
-check command: vdb-dump --version
-
-
-
-
-
-
 ✅  Unzip and save the uncompressed file
 ----------------------------------------
 This will create a plain .fastq file (warning: could be huge).
@@ -38,6 +24,23 @@ gunzip -c ~/datasets/SRR1551114/zipped/SRR1551114_2.fastq.gz > ~/datasets/SRR155
 
 -c : you must provide a single input file.
 > : keep original .gz file
+
+
+
+🧬 RNA-Seq: Downloading FASTQ Files from NCBI
+=============================================
+
+OPTION 1: Use SRA ( Sequence Read Archieve ) -Tool
+--------------------------------------------------
+Tool: sra-toolkit
+check command: vdb-dump --version
+
+e.g., fasterq-dump SRR33542395 --split-files -O ~/Downloads --temp ~/Downloads/tmp --progress
+
+--split-siles : downloads both reads if available
+-o: destination for saving the file
+--temp ~/Downloads/tml: temporary directory to record the progress as too mucch large data could look like stuck while its downloading in backend
+--progress : to visualize the downloading progress
 
 
 
