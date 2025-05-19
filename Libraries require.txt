@@ -3,3 +3,5 @@ Libraries required
 			sra-toolkit - for downloading datasets exclusive from NCBI
 			fastqc - Quality check ( sudo apt install fastqc )
 			fastp - trimming the adaptors if the fastqc report isn't clear the quality line ( sudo apt install fastp )
+			hisat2 / star - Fast and memory-efficient. Good for large genomes alinger ( sudo apt install hisat2 ) / More accurate and faster for spliced alignments (heavier on memory).
+			
