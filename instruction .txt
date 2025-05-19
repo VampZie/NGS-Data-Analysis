@@ -1,7 +1,8 @@
 🧬 RNA-Seq: Downloading FASTQ Files from ENA Using wget
+========================================================
 
-✅ Option 1: Download from European Nucleotide Archive (ENA) using wget
-------------------------------------------------------------
+Download from European Nucleotide Archive (ENA) using wget
+----------------------------------------------------------
 1. Visit: https://www.ebi.ac.uk/ena/browser/home
 2. Search for your SRR accession (e.g., SRR1551114)
 3. Scroll to the "FASTQ Files" section
@@ -12,10 +13,20 @@ Example:
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR155/004/SRR1551114/SRR1551114_1.fastq.gz
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR155/004/SRR1551114/SRR1551114_2.fastq.gz
 
-✅ Option 2: Use Aspera (ascp) for faster downloads (optional)
-------------------------------------------------------------
-- Requires installing IBM Aspera CLI
-- Much faster for large datasets than wget
+
+
+🧬 RNA-Seq: Downloading FASTQ Files from NCBI
+=============================================
+
+OPTION 1: Use SRA ( Sequence Read Archieve ) -Tool
+--------------------------------------------------
+Tool: sra-toolkit
+check command: vdb-dump --version
+
+
+
+
+
 
 ✅  Unzip and save the uncompressed file
 ----------------------------------------
