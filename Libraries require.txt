@@ -1,4 +1,5 @@
 Libraries required
-			gzip - for unzip ( sudo apt install gzip )
+			gunzip - for unzip ( sudo apt install gzip )
+			sra-toolkit - for downloading datasets exclusive from NCBI
 			fastqc - Quality check ( sudo apt install fastqc )
 			
