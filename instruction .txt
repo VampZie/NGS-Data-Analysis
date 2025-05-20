@@ -73,7 +73,7 @@ Fastp require to ]run if following conditions arises:
   Overrepresented sequences
 
 
-fastp \-i /mnt/xt/NGS/datasets/SRR33542395/raw/SRR33542395.fastq \-o /mnt/xt/NGS/output/SRR33542395/fp/SRR33542395.fastq.gz \--detect_adapter_for_pe \ --html SRR33542395_fastp_report.html \ --thread 1
+fastp -i /home/vzscyborg/ngs/datasets/SRR33542395 \-o /home/vzscyborg/ngs/output/SRR33542395/fp/SRR33542395_clean.fasq \--detect_adapter_for_pe \--html /home/vzscyborg/ngs/output/SRR33542395/fp/SRR33542395_clean.html \--thread 1
 -i: for input file followed by file directory, if two read second read start with \-I <source directory>
 -o: for output file followed by file directory with extension, if two out reads second read start with /-O <destination directory>
 --html : for making the output report in html formate along with the file name
