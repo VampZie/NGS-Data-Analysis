@@ -79,3 +79,19 @@ fastp -i /home/vzscyborg/ngs/datasets/SRR33542395 \-o /home/vzscyborg/ngs/output
 --html : for making the output report in html formate along with the file name
 --thread define the number of thread fastp should use
 
+▶️ Run hisat2
+--------------
+hisat2 have two functions, one is for making the genomic index of the reference genome.
+Another function is to do refernce genomce alignment
+
+1. Genome Indexing: 
+ For reference genome i took GRCm39 from NCBI ( Genome ), downloaded the Genome Sequences (FASTA)
+ Following comnand is for the generating the genemic index
+
+  hisat2-build /home/vzscyborg/ngs/datasets/gcf/ncbi_dataset/data/GCF_000001635.27/GCF_000001635.27_GRCm39_genomic.fna grcm_index
+
+    hisat2-build - 	The HISAT2 utility that builds the index files from a reference genome (FASTA format)
+    /home/vzscyborb... - path to the reference genome
+    grcm_index - This is the base name for the output index files. HISAT2 will generate 8 files named grcm_index.1.ht2, grcm_index.2.ht2, ..., grcm_index.8.ht2.
+
+2. 
