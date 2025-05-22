@@ -105,3 +105,33 @@ hisat2 -p 1 -x /home/vzscyborg/ngs/output/SRR33542395/hisat/indx/grcm_index -U /
  -> -U : Specifies the input file containing unpaired single-end reads in FASTQ format. This is the cleaned sequencing reads you want to align.
  -> -S : Specifies the output file where the aligner will write the results in SAM format (Sequence Alignment/Map). This file contains detailed information on how each read aligns to the reference genome
 
+▶️ Run samtools
+----------------
+1. convers the SRR35542395.sam to SRR35542395.bam
+
+   samtools view -@ 3 -s 0.5 -b /home/vzscyborg/ngs/output/SRR33542395/hisat/align/SRR33542395_hisat.sam > /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR33542395.bam
+
+        -> samtools view : Converts between different formats (SAM ⇄ BAM), filters, and subsamples reads
+        -> -@ : 	Use 3 CPU threads to speed up the conversion.
+        -> -s 0.5 : 	Subsample 50% of reads randomly. The 0.5 means each read has a 50% chance of being retained. This is useful for downsampling large datasets
+        -> -b Output in BAM format (binary, compressed form of SAM).
+        -> 	Redirects output to a file.
+
+2. BAM file soritng
+
+  samtools sort -@ 3 -o /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR35542395_sorted.bam /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR33542395.bam
+
+       -> samtools sort : Convert Bam file into sorted bam file.
+       -> -@ : Use 3 CPU threads to speed up the conversion.
+       -> -o : specify the output file followed by the output file path along with the filename with .bam file extension
+       -> in last the directiory to the input bam file
+
+3. Indexing of sorted BAM file
+
+samtools index -@ 3 -o /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR33542395_indexed.bam /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR33542395_sorted.bam
+
+       -> samtools index : Convert Sorted  Bam file into indexed bam file.
+       -> -@ : Use 3 CPU threads to speed up the conversion.
+       -> -o : specify the output file followed by the output file path along with the filename with .bam file extension
+       -> in last the directiory to the input sorted bam file
+
