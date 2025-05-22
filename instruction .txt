@@ -22,8 +22,8 @@ gunzip SRR33228995.fastq.gz
 If you want to keep both compressed and uncompressed files: gzip -c <source directory> > <destination directory>
 gunzip -c ~/datasets/SRR1551114/zipped/SRR1551114_2.fastq.gz > ~/datasets/SRR1551114/raw/SRR1551114_2.fastq
 
--c : you must provide a single input file.
-> : keep original .gz file
+-> -c : you must provide a single input file.
+-> > : keep original .gz file
 
 
 
@@ -37,10 +37,10 @@ check command: vdb-dump --version
 
 e.g., fasterq-dump SRR33542395 --split-files -O ~/Downloads --temp ~/Downloads/tmp --progress
 
---split-siles : downloads both reads if available
--o: destination for saving the file
---temp ~/Downloads/tml: temporary directory to record the progress as too mucch large data could look like stuck while its downloading in backend
---progress : to visualize the downloading progress
+-> --split-siles : downloads both reads if available
+-> -o: destination for saving the file
+-> --temp ~/Downloads/tml: temporary directory to record the progress as too mucch large data could look like stuck while its downloading in backend
+-> --progress : to visualize the downloading progress
 
 
 
@@ -75,10 +75,10 @@ Fastp require to ]run if following conditions arises:
 
 fastp -i /home/vzscyborg/ngs/datasets/SRR33542395 -o /home/vzscyborg/ngs/output/SRR33542395/fp/SRR33542395_clean.fastq --detect_adapter_for_pe --html /home/vzscyborg/ngs/output/SRR33542395/fp/SRR33542395_clean.html --json /home/vzscyborg/ngs/output/SRR33542395/fp/SRR33542395_clean.json --thread 1
 
--i: for input file followed by file directory, if two read second read start with \-I <source directory>
--o: for output file followed by file directory with extension, if two out reads second read start with /-O <destination directory>
---html : for making the output report in html formate along with the file name
---thread define the number of thread fastp should use
+-> -i: for input file followed by file directory, if two read second read start with \-I <source directory>
+-> -o: for output file followed by file directory with extension, if two out reads second read start with /-O <destination directory>
+-> --html : for making the output report in html formate along with the file name
+-> --thread define the number of thread fastp should use
 
 ▶️ Run hisat2
 --------------
@@ -91,8 +91,16 @@ Another function is to do refernce genomce alignment
 
   hisat2-build /home/vzscyborg/ngs/datasets/gcf/ncbi_dataset/data/GCF_000001635.27/GCF_000001635.27_GRCm39_genomic.fna grcm_index
 
-    hisat2-build - 	The HISAT2 utility that builds the index files from a reference genome (FASTA format)
-    /home/vzscyborb... - path to the reference genome
-    grcm_index - This is the base name for the output index files. HISAT2 will generate 8 files named grcm_index.1.ht2, grcm_index.2.ht2, ..., grcm_index.8.ht2.
+   -> hisat2-build - 	The HISAT2 utility that builds the index files from a reference genome (FASTA format)
+   -> /home/vzscyborb... - path to the reference genome
+   -> grcm_index - This is the base name for the output index files. HISAT2 will generate 8 files named grcm_index.1.ht2, grcm_index.2.ht2, ..., grcm_index.8.ht2.
 
-2. 
+2. ALignment 
+ For the alignment require multiple files for 2 input method one for genome index and another is cleaned fastq file generated from fastp
+
+hisat2 -p 1 -x /home/vzscyborg/ngs/output/SRR33542395/hisat/indx/grcm_index -U /home/vzscyborg/ngs/output/SRR33542395/fp/SRR33542395_clean.fastq -S /home/vzscyborg/ngs/output/SRR33542395/hisat/align/SRR33542395_hisat.sam
+ -> hisat2 : HISAT2 is a fast and sensitive alignment tool for mapping sequencing reads (usually RNA-seq) to a reference genome.
+ -> -p 1Use 1 CPU thread for the alignment process. This limits HISAT2 to run on a single processor core
+ -> -U Specifies the input file containing unpaired single-end reads in FASTQ format. This is the cleaned sequencing reads you want to align.
+ -> -S Specifies the output file where the aligner will write the results in SAM format (Sequence Alignment/Map). This file contains detailed information on how each read aligns to the reference genome
+
