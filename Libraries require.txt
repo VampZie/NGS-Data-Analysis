@@ -5,3 +5,6 @@ Libraries required
 			fastp - trimming the adaptors if the fastqc report isn't clear the quality line ( sudo apt install fastp )
 			hisat2 / star - Fast and memory-efficient. Good for large genomes alinger ( sudo apt install hisat2 ) / More accurate and faster for spliced alignments (heavier on memory).
 			samtools - manipulating high-throughput sequencing data in SAM, BAM, and CRAM formats.
+			build-essential zlib1g-dev - for depandancies of other libraries
+			for subreads downlaad form the provided link witht he lastest verison ( https://sourceforge.net/projects/subread/files/ ) -- extraxt using tar > cd to src > make -f MakeFiles.Linux > move the files to bashrc to make it run from anywhere
+			
