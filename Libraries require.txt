@@ -7,4 +7,4 @@ Libraries required
 			samtools - manipulating high-throughput sequencing data in SAM, BAM, and CRAM formats.
 			build-essential zlib1g-dev - for depandancies of other libraries
 			for subreads downlaad form the provided link witht he lastest verison ( https://sourceforge.net/projects/subread/files/ ) -- extraxt using tar > cd to src > make -f MakeFiles.Linux > move the files to bashrc to make it run from anywhere
-			
+			featureCounts -  assign mapped reads to genomic features (e.g., genes, exons) and generate a count matrix for differential expression analysis
