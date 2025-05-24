@@ -135,3 +135,6 @@ samtools index -@ 3 -o /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR33542395_i
        -> -o : specify the output file followed by the output file path along with the filename with .bam file extension
        -> in last the directiory to the input sorted bam file
 
+▶️ Run FeatureCounts
+---------------------
+for creating the count matrix of the gene/exons must have genemoe assembaly downloaded from GENCODE ( recommanded ) and dataset set must matches the reference genome.
