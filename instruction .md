@@ -1,8 +1,10 @@
+ BEFORE STARTING RNA=SEQ ANALYSIS YOU MUST ENSURE THAT YOU'LL USE SAME DATA SOURCE THROUGHOUT ANALYSIS
+
 🧬 RNA-Seq: Downloading FASTQ Files from ENA Using wget
 ========================================================
 
-Download from European Nucleotide Archive (ENA) using wget
-----------------------------------------------------------
+If you want to Download from European Nucleotide Archive (ENA) use 'wget'
+-------------------------------------------------------------------------
 1. Visit: https://www.ebi.ac.uk/ena/browser/home
 2. Search for your SRR accession (e.g., SRR1551114)
 3. Scroll to the "FASTQ Files" section
@@ -30,8 +32,8 @@ gunzip -c ~/datasets/SRR1551114/zipped/SRR1551114_2.fastq.gz > ~/datasets/SRR155
 🧬 RNA-Seq: Downloading FASTQ Files from NCBI
 =============================================
 
-OPTION 1: Use SRA ( Sequence Read Archieve ) -Tool
---------------------------------------------------
+If you want to download from NCBI, Use SRA ( Sequence Read Archieve ) -Tool
+---------------------------------------------------------------------------
 Tool: sra-toolkit
 check command: vdb-dump --version
 
@@ -44,9 +46,9 @@ e.g., fasterq-dump SRR33542395 --split-files -O ~/Downloads --temp ~/Downloads/t
 
 
 
-=============================================================
--------------------------------------------------------------
-=============================================================
+|=============================================================|
+|---------------  SRATING RNA-SEQ ANALYSIS  ------------------|
+|=============================================================|
 
 ▶️ Run FastQC on the downloaded files:
 --------------------------------------
