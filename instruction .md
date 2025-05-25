@@ -1,4 +1,4 @@
-### 🧬 RNA-Seq: Preparation and FASTQ File Download Guide
+###  RNA-Seq: Preparation and FASTQ File Download Guide
 
 > **Before You Begin**  
 > Ensure you are using the **same data source** consistently throughout your RNA-Seq analysis to avoid inconsistencies in results.
