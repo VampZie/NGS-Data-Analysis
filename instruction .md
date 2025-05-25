@@ -40,10 +40,10 @@ gunzip -c ~/datasets/SRR1551114/zipped/SRR1551114_2.fastq.gz > ~/datasets/SRR155
 
 
 RNA-Seq: Downloading FASTQ Files from NCBI
-=============================================
+------------------------------------------
 
 If you want to download from NCBI, Use SRA ( Sequence Read Archieve ) -Tool
----------------------------------------------------------------------------
+
 Tool: sra-toolkit
 check command: vdb-dump --version
 
