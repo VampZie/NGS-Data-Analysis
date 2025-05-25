@@ -51,10 +51,10 @@ e.g.,
 ```
 fasterq-dump SRR33542395 --split-files -O ~/Downloads --temp ~/Downloads/tmp --progress
 ```
--> --split-siles : downloads both reads if available
--> -o: destination for saving the file
--> --temp ~/Downloads/tml: temporary directory to record the progress as too mucch large data could look like stuck while its downloading in backend
--> --progress : to visualize the downloading progress
+- --split-siles : downloads both reads if available
+-  -o: destination for saving the file
+-  --temp ~/Downloads/tml: temporary directory to record the progress as too mucch large data could look like stuck while its downloading in backend
+-  --progress : to visualize the downloading progress
 
 
 
