@@ -123,7 +123,7 @@ hisat2 -p 1 -x /home/vzscyborg/ngs/output/SRR33542395/hisat/indx/grcm_index -U /
 -  -S : Specifies the output file where the aligner will write the results in SAM format (Sequence Alignment/Map). This file contains detailed information on how each read aligns to the reference genome
 
 ## ▶️ Run samtools
-----------------
+
 ### 1. convers the SRR35542395.sam to SRR35542395.bam
 ```
    samtools view -@ 3 -s 0.5 -b /home/vzscyborg/ngs/output/SRR33542395/hisat/align/SRR33542395_hisat.sam > /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR33542395.bam
