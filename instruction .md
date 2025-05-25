@@ -73,10 +73,10 @@ fastqc SRR1551114_1.fastq.gz SRR1551114_2.fastq.gz -o ~/fastq_qc_reports
  ```
 fastqc -t 4 -o /home/vzscyborg/rnaseq/fastqc_rep /home/vzcyborg/datasets/rnads/SRR1551114_1.fastq.gz
 ```
-fastqc - command calling the quality check function 
--t 4 - t refers to the threads using depanding upon the per core threads 
--o refers the path where the report of the quality check will save followed by the proper path 
-SRRxxxxxxxxx.fastq.gz - files on which quality check will run
+- fastqc - command calling the quality check function
+- -t 4 - t refers to the threads using depanding upon the per core threads
+- -o refers the path where the report of the quality check will save followed by the proper path
+- SRRxxxxxxxxx.fastq.gz - files on which quality check will run
 
 
 
