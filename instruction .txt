@@ -89,7 +89,7 @@ Another function is to do refernce genomce alignment
  For reference genome i took GRCm39 from NCBI ( Genome ), downloaded the Genome Sequences (FASTA)
  Following comnand is for the generating the genemic index
 
-  hisat2-build /home/vzscyborg/ngs/datasets/gcf/ncbi_dataset/data/GCF_000001635.27/GCF_000001635.27_GRCm39_genomic.fna grcm_index
+  hisat2-build /home/vzscyborg/ngs/datasets/gtf/GRCm39.primary_assembly.genome.fa /home/vzscyborg/ngs/output/SRR33542395/hisat/indx/GRCm39_index
 
    -> hisat2-build - 	The HISAT2 utility that builds the index files from a reference genome (FASTA format)
    -> /home/vzscyborb... - path to the reference genome
