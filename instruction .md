@@ -58,8 +58,8 @@ fasterq-dump SRR33542395 --split-files -O ~/Downloads --temp ~/Downloads/tmp --p
 
 
 
-|=============================================================|
-|                 SRATING RNA-SEQ ANALYSIS                    |
+|=============================================================| 
+|                 SRATING RNA-SEQ ANALYSIS                    | 
 |=============================================================|
 
 ▶️ Run FastQC on the downloaded files:
