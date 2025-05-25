@@ -1,4 +1,4 @@
- BEFORE STARTING RNA=SEQ ANALYSIS YOU MUST ENSURE THAT YOU'LL USE SAME DATA SOURCE THROUGHOUT ANALYSIS
+ BEFORE STARTING RNA-SEQ ANALYSIS YOU MUST ENSURE THAT YOU'LL USE SAME DATA SOURCE THROUGHOUT ANALYSIS
 
 🧬 RNA-Seq: Downloading FASTQ Files from ENA Using wget
 ========================================================
@@ -11,7 +11,8 @@ If you want to Download from European Nucleotide Archive (ENA) use 'wget'
 4. Right-click the links to download `*_1.fastq.gz` and `*_2.fastq.gz`
 5. Use wget to download:
 
-Example:
+Example
+
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR155/004/SRR1551114/SRR1551114_1.fastq.gz
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR155/004/SRR1551114/SRR1551114_2.fastq.gz
 
