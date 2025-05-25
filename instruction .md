@@ -1,11 +1,11 @@
-# 🧬 RNA-Seq: Preparation and FASTQ File Download Guide
+### 🧬 RNA-Seq: Preparation and FASTQ File Download Guide
 
 > ⚠️ **Before You Begin**  
 > Ensure you are using the **same data source** consistently throughout your RNA-Seq analysis to avoid inconsistencies in results.
 
 ---
 
-## 📥 Downloading FASTQ Files from ENA Using `wget`
+### 📥 Downloading FASTQ Files from ENA Using `wget`
 
 If you want to download data from the **European Nucleotide Archive (ENA)** using `wget`, follow these steps:
 
@@ -60,7 +60,7 @@ fasterq-dump SRR33542395 --split-files -O ~/Downloads --temp ~/Downloads/tmp --p
 
 
 ---
-   STARTING RNA-SEQ ANALYSIS                    
+#   STARTING RNA-SEQ ANALYSIS                    
 ---
 
 ▶️ Run FastQC on the downloaded files:
