@@ -59,9 +59,9 @@ fasterq-dump SRR33542395 --split-files -O ~/Downloads --temp ~/Downloads/tmp --p
 
 
 
----
+===================
 #   🧬 STARTING RNA-SEQ ANALYSIS 🧬                   
----
+==================
 
 ▶️ Run FastQC on the downloaded files:
 --------------------------------------
