@@ -3,7 +3,7 @@
 > **Before You Begin**  
 > Ensure you are using the **same data source** consistently throughout your RNA-Seq analysis to avoid inconsistencies in results.
 
----
+---------
 
 ###  Downloading FASTQ Files from ENA Using `wget`
 
@@ -24,9 +24,10 @@ wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR155/004/SRR1551114/SRR1551114_1.fastq
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR155/004/SRR1551114/SRR1551114_2.fastq.gz
 ```
 
+------------------
 
-Unzip and save the uncompressed file
------------------------------------------
+### Unzip and save the uncompressed file
+
 This will create a plain .fastq file (warning: could be huge).
 gunzip SRR33228995.fastq.gz
 
@@ -37,10 +38,10 @@ gunzip -c ~/datasets/SRR1551114/zipped/SRR1551114_2.fastq.gz > ~/datasets/SRR155
 - -c : you must provide a single input file.
 - '>' : keep original .gz file
 
-
-
-RNA-Seq: Downloading FASTQ Files from NCBI
 ------------------------------------------
+
+### RNA-Seq: Downloading FASTQ Files from NCBI
+
 
 If you want to download from NCBI, Use SRA ( Sequence Read Archieve ) -Tool
 
@@ -65,7 +66,7 @@ fasterq-dump SRR33542395 --split-files -O ~/Downloads --temp ~/Downloads/tmp --p
 ------------------------------------------------------------------------------------
 
 ## ▶️ Run FastQC on the downloaded files:
---------------------------------------
+
 ```
 fastqc SRR1551114_1.fastq.gz SRR1551114_2.fastq.gz -o ~/fastq_qc_reports
 ```
@@ -78,10 +79,10 @@ fastqc -t 4 -o /home/vzscyborg/rnaseq/fastqc_rep /home/vzcyborg/datasets/rnads/S
 - -o refers the path where the report of the quality check will save followed by the proper path
 - SRRxxxxxxxxx.fastq.gz - files on which quality check will run
 
-
+--------------------------------------
 
 ## ▶️ Run Fastp, if the Fastqc report reaches quality failure
-----------------------------------------------------------
+
 Fastp require to ]run if following conditions arises:
   1. Adapter contamination 
   2.  Low-quality tiles 
@@ -96,8 +97,10 @@ fastp -i /home/vzscyborg/ngs/datasets/SRR33542395 -o /home/vzscyborg/ngs/output/
 -  --html : for making the output report in html formate along with the file name 
 -  --thread define the number of thread fastp should use
 
+----------------------------------------------------------
+
 ## ▶️ Run hisat2
---------------
+
 hisat2 have two functions, one is for making the genomic index of the reference genome.
 Another function is to do refernce genomce alignment
 
@@ -121,6 +124,9 @@ hisat2 -p 1 -x /home/vzscyborg/ngs/output/SRR33542395/hisat/indx/grcm_index -U /
 -  -p 1 : Use 1 CPU thread for the alignment process. This limits HISAT2 to run on a single processor core 
 -  -U : Specifies the input file containing unpaired single-end reads in FASTQ format. This is the cleaned sequencing reads you want to align. 
 -  -S : Specifies the output file where the aligner will write the results in SAM format (Sequence Alignment/Map). This file contains detailed information on how each read aligns to the reference genome
+
+------------------------------------
+
 
 ## ▶️ Run samtools
 
@@ -160,6 +166,8 @@ samtools sort -@ 1 -o /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR33542395_so
 samtools index -@ 1 /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR33542395_sorted.bam
 ```
 
+------------------------------------
+
 ## ▶️ Run FeatureCounts
----------------------
+
 for creating the count matrix of the gene/exons must have genemoe assembaly downloaded from GENCODE ( recommanded ) and dataset set must matches the reference genome.
