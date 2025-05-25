@@ -1,20 +1,28 @@
- BEFORE STARTING RNA-SEQ ANALYSIS YOU MUST ENSURE THAT YOU'LL USE SAME DATA SOURCE THROUGHOUT ANALYSIS
+# 🧬 RNA-Seq: Preparation and FASTQ File Download Guide
 
-🧬 RNA-Seq: Downloading FASTQ Files from ENA Using wget
-========================================================
+> ⚠️ **Before You Begin**  
+> Ensure you are using the **same data source** consistently throughout your RNA-Seq analysis to avoid inconsistencies in results.
 
-If you want to Download from European Nucleotide Archive (ENA) use 'wget'
--------------------------------------------------------------------------
-1. Visit: https://www.ebi.ac.uk/ena/browser/home
-2. Search for your SRR accession (e.g., SRR1551114)
-3. Scroll to the "FASTQ Files" section
-4. Right-click the links to download `*_1.fastq.gz` and `*_2.fastq.gz`
-5. Use wget to download:
+---
 
-Example-
+## 📥 Downloading FASTQ Files from ENA Using `wget`
 
+If you want to download data from the **European Nucleotide Archive (ENA)** using `wget`, follow these steps:
+
+### 🔗 Step-by-Step Guide
+
+1. Visit the ENA browser: [https://www.ebi.ac.uk/ena/browser/home](https://www.ebi.ac.uk/ena/browser/home)
+2. Search for your **SRR accession** (e.g., `SRR1551114`)
+3. Scroll down to the **"FASTQ Files"** section
+4. Right-click and copy the download links for:
+   - `*_1.fastq.gz` (Read 1)
+   - `*_2.fastq.gz` (Read 2)
+5. Use `wget` to download the files:
+
+```bash
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR155/004/SRR1551114/SRR1551114_1.fastq.gz
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR155/004/SRR1551114/SRR1551114_2.fastq.gz
+
 
 
 ✅  Unzip and save the uncompressed file
