@@ -12,16 +12,17 @@ If you want to Download from European Nucleotide Archive (ENA) use 'wget'
 5. Use wget to download:
 
 Example-
+
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR155/004/SRR1551114/SRR1551114_1.fastq.gz
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR155/004/SRR1551114/SRR1551114_2.fastq.gz
 
 
 ✅  Unzip and save the uncompressed file
-----------------------------------------
+-----------------------------------------
 This will create a plain .fastq file (warning: could be huge).
 gunzip SRR33228995.fastq.gz
 
-If you want to keep both compressed and uncompressed files: gzip -c <source directory> > <destination directory>
+If you want to keep both compressed and uncompressed files: gzip -c (source directory) > <destination directory>
 gunzip -c ~/datasets/SRR1551114/zipped/SRR1551114_2.fastq.gz > ~/datasets/SRR1551114/raw/SRR1551114_2.fastq
 
 -> -c : you must provide a single input file.
