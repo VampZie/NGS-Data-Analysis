@@ -128,7 +128,7 @@ hisat2 -p 1 -x /home/vzscyborg/ngs/output/SRR33542395/hisat/indx/grcm_index -U /
 
 3. Indexing of sorted BAM file
 
-samtools index -@ 3 -o /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR33542395_indexed.bam /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR33542395_sorted.bam
+samtools index -@ 3 -o /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR33542395.bai /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR33542395_sorted.bam
 
        -> samtools index : Convert Sorted  Bam file into indexed bam file.
        -> -@ : Use 3 CPU threads to speed up the conversion.
