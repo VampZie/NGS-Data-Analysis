@@ -27,7 +27,7 @@ If you want to keep both compressed and uncompressed files: gzip -c (source dire
 gunzip -c ~/datasets/SRR1551114/zipped/SRR1551114_2.fastq.gz > ~/datasets/SRR1551114/raw/SRR1551114_2.fastq
 
 - -c : you must provide a single input file.
-- > : keep original .gz file
+- '>' : keep original .gz file
 
 
 
