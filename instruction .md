@@ -64,7 +64,7 @@ fasterq-dump SRR33542395 --split-files -O ~/Downloads --temp ~/Downloads/tmp --p
 #   🧬 STARTING RNA-SEQ ANALYSIS 🧬                   
 ------------------------------------------------------------------------------------
 
-##▶️ Run FastQC on the downloaded files:
+## ▶️ Run FastQC on the downloaded files:
 --------------------------------------
 ```
 fastqc SRR1551114_1.fastq.gz SRR1551114_2.fastq.gz -o ~/fastq_qc_reports
@@ -80,7 +80,7 @@ fastqc -t 4 -o /home/vzscyborg/rnaseq/fastqc_rep /home/vzcyborg/datasets/rnads/S
 
 
 
-##▶️ Run Fastp, if the Fastqc report reaches quality failure
+## ▶️ Run Fastp, if the Fastqc report reaches quality failure
 ----------------------------------------------------------
 Fastp require to ]run if following conditions arises:
   1. Adapter contamination 
@@ -96,7 +96,7 @@ fastp -i /home/vzscyborg/ngs/datasets/SRR33542395 -o /home/vzscyborg/ngs/output/
 -  --html : for making the output report in html formate along with the file name 
 -  --thread define the number of thread fastp should use
 
-##▶️ Run hisat2
+## ▶️ Run hisat2
 --------------
 hisat2 have two functions, one is for making the genomic index of the reference genome.
 Another function is to do refernce genomce alignment
