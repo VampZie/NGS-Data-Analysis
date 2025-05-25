@@ -68,50 +68,50 @@ gunzip -c ~/datasets/SRR1551114/zipped/SRR1551114_2.fastq.gz > ~/datasets/SRR155
 
 ## RNA-Seq: Downloading FASTQ Files from NCBI
 
-For NCBI, use the **SRA Toolkit**.
+If you want to download from NCBI, Use SRA ( Sequence Read Archieve ) -Tool
 
-- Check install:  
-  ```bash
-  vdb-dump --version
-  ```
+Tool: sra-toolkit
+check command: vdb-dump --version
 
 - Download using `fasterq-dump`:
   ```bash
   fasterq-dump SRR33542395 --split-files -O ~/Downloads --temp ~/Downloads/tmp --progress
   ```
-  - `--split-files` : Downloads both reads (if paired-end)
-  - `-O` : Output directory
-  - `--temp` : Directory for temp files (useful for large downloads)
-  - `--progress` : Shows download progress
+- --split-siles : downloads both reads if available
+-  -o: destination for saving the file
+-  --temp ~/Downloads/tml: temporary directory to record the progress as too mucch large data could look like stuck while its downloading in backend
+-  --progress : to visualize the downloading progress
 
----
 
-# 🧬 STARTING RNA-SEQ ANALYSIS
-
----
+------------------------------------------------------------------------------------
+#   🧬 STARTING RNA-SEQ ANALYSIS 🧬                   
+------------------------------------------------------------------------------------
 
 ## ▶️ Run FastQC on the Downloaded Files
 
 **Run quality check:**
 ```bash
 fastqc SRR1551114_1.fastq.gz SRR1551114_2.fastq.gz -o ~/fastq_qc_reports
-# or
+```
+or
+```
 fastqc -t 4 -o /home/vzscyborg/rnaseq/fastqc_rep /home/vzcyborg/datasets/rnads/SRR1551114_1.fastq.gz
 ```
-- `-t 4` : Number of threads
-- `-o` : Output directory
-- `SRRxxxxxxx.fastq.gz` : Input files
+- fastqc - command calling the quality check function
+- -t 4 - t refers to the threads using depanding upon the per core threads
+- -o refers the path where the report of the quality check will save followed by the proper path
+- SRRxxxxxxxxx.fastq.gz - files on which quality check will run
 
 ---
 
 ## ▶️ Run Fastp, if FastQC Report Fails
 
-Run **Fastp** for:
-  1. Adapter contamination
-  2. Low-quality tiles
-  3. Biased base content
-  4. Overrepresented sequences
-
+Fastp require to run if following conditions arises:
+  1. Adapter contamination 
+  2.  Low-quality tiles 
+  3. Biased base content 
+  4. verrepresented sequences
+  5. 
 ```bash
 fastp -i /home/vzscyborg/ngs/datasets/SRR33542395 \
       -o /home/vzscyborg/ngs/output/SRR33542395/fp/SRR33542395_clean.fastq \
@@ -120,26 +120,34 @@ fastp -i /home/vzscyborg/ngs/datasets/SRR33542395 \
       --json /home/vzscyborg/ngs/output/SRR33542395/fp/SRR33542395_clean.json \
       --thread 1
 ```
-- `-i` : Input file (for paired-end, use `-I` for Read 2)
-- `-o` : Output file (for paired-end, use `-O` for Read 2)
-- `--html` : Output report (HTML)
-- `--thread` : Number of threads
+- -i: for input file followed by file directory, if two read second read start with \-I (source directory) 
+-  -o: for output file followed by file directory with extension, if two out reads second read start with /-O (destination directory) 
+-  --html : for making the output report in html formate along with the file name 
+-  --thread define the number of thread fastp should use
+
 
 ---
 
 ## ▶️ Run HISAT2
 
-### 1. **Genome Indexing**
-Download your reference genome (e.g., GRCm39 from NCBI) in FASTA format.
+hisat2 have two functions, one is for making the genomic index of the reference genome.
+Another function is to do refernce genomce alignment
 
+### 1. **Genome Indexing**
+ For reference genome i took GRCm39 from NCBI ( Genome ), downloaded the Genome Sequences (FASTA)
+ Following comnand is for the generating the genemic index
+ 
 ```bash
 hisat2-build /home/vzscyborg/ngs/datasets/gtf/GRCm39.primary_assembly.genome.fa \
              /home/vzscyborg/ngs/output/SRR33542395/hisat/indx/GRCm39_index
 ```
-- `hisat2-build` : Create index from FASTA
-- Output: GRCm39_index.*.ht2
+-  hisat2-build - 	The HISAT2 utility that builds the index files from a reference genome (FASTA format) 
+-  /home/vzscyborb... - path to the reference genome 
+-  grcm_index - This is the base name for the output index files. HISAT2 will generate 8 files named grcm_index.1.ht2, grcm_index.2.ht2, ..., grcm_index.8.ht2.
 
 ### 2. **Alignment**
+
+For the alignment require multiple files for 2 input method one for genome index and another is cleaned fastq file generated from fastp
 
 ```bash
 hisat2 -p 1 \
@@ -147,9 +155,11 @@ hisat2 -p 1 \
        -U /home/vzscyborg/ngs/output/SRR33542395/fp/SRR33542395_clean.fastq \
        -S /home/vzscyborg/ngs/output/SRR33542395/hisat/align/SRR33542395_hisat.sam
 ```
-- `-x` : Path to genome index
-- `-U` : Input clean reads
-- `-S` : Output SAM file
+-  hisat2 : HISAT2 is a fast and sensitive alignment tool for mapping sequencing reads (usually RNA-seq) to a reference genome. 
+- -x : Specifies the basename of the HISAT2 index for the reference genome to which you want to align your reads. This is the index you built earlier from the mouse genome (GRCm39). 
+-  -p 1 : Use 1 CPU thread for the alignment process. This limits HISAT2 to run on a single processor core 
+-  -U : Specifies the input file containing unpaired single-end reads in FASTQ format. This is the cleaned sequencing reads you want to align. 
+-  -S : Specifies the output file where the aligner will write the results in SAM format (Sequence Alignment/Map). This file contains detailed information on how each read aligns to the reference genome
 
 ---
 
@@ -159,19 +169,32 @@ hisat2 -p 1 \
 ```bash
 samtools view -@ 3 -s 0.5 -b /home/vzscyborg/ngs/output/SRR33542395/hisat/align/SRR33542395_hisat.sam > /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR33542395.bam
 ```
-- `-@ 3` : Threads
-- `-s 0.5` : Subsample 50% (optional)
-- `-b` : Output BAM
+- samtools view : Converts between different formats (SAM ⇄ BAM), filters, and subsamples reads 
+- -@ : 	Use 3 CPU threads to speed up the conversion. 
+- -s 0.5 : 	Subsample 50% of reads randomly. The 0.5 means each read has a 50% chance of being retained. This is useful for downsampling large datasets  ( OPTIONAL )
+- -b Output in BAM format (binary, compressed form of SAM). 
+- 	Redirects output to a file.
+
 
 ### 2. **Sort BAM**
 ```bash
 samtools sort -@ 3 -o /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR35542395_sorted.bam /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR33542395.bam
 ```
 
+-  samtools sort : Convert Bam file into sorted bam file.
+-  -@ : Use 3 CPU threads to speed up the conversion.
+-  -o : specify the output file followed by the output file path along with the filename with .bam file extension
+-  in last the directiory to the input bam file
+
 ### 3. **Index Sorted BAM**
 ```bash
 samtools index -@ 3 -o /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR33542395.bai /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR33542395_sorted.bam
 ```
+
+-  samtools index : Convert Sorted  Bam file into indexed bam file.
+-  -@ : Use 3 CPU threads to speed up the conversion.
+-  -o : specify the output file followed by the output file path along with the filename with .bam file extension
+-  in last the directiory to the input sorted bam file
 
 ### **Chain all steps:**
 ```bash
