@@ -221,5 +221,5 @@ featureCounts -T 3 -t exon -g gene_id -a /home/vzscyborg/ngs/datasets/gtf/gencod
 </p>
 
 <p align="center">
-  <b>For more educational guides, visit <a href="https://www.ebi.ac.uk/training/online/courses">EBI Training</a> or <a href="https://rnabio.org">RNA-Seq Tutorials</a>.</b>
+  <b>For more educational guides,contact https://www.linkedin.com/in/vidit-zainith-196960319?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app.</b>
 </p>
