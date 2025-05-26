@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/RNA--Seq%20Preparation%20%26%20FASTQ%20Download%20Guide-2196f3?style=for-the-badge&logo=book&logoColor=white" alt="RNA-Seq Banner"/>
+  <img src="https://img.shields.io/badge/RNA--Seq%20Preparation%20and%20FASTQ%20Guide-blue?style=for-the-badge&logo=book&logoColor=white" alt="RNA-Seq Banner"/>
 </p>
 
 
