@@ -84,11 +84,11 @@ check command: vdb-dump --version
 
 **Run quality check:**
 ```bash
-fastqc SRR1551114_1.fastq.gz SRR1551114_2.fastq.gz -o ~/fastq_qc_reports
+fastqc SRR1551114_1.fastq.gz SRR1551114_2.fastq.gz -o ~/fastq_qc_reports --progress
 ```
 or
 ```
-fastqc -t 4 -o /home/vzscyborg/rnaseq/fastqc_rep /home/vzcyborg/datasets/rnads/SRR1551114_1.fastq.gz
+fastqc -t 4 -o /home/vzscyborg/rnaseq/fastqc_rep /home/vzcyborg/datasets/rnads/SRR1551114_1.fastq.gz --progress
 ```
 - fastqc - command calling the quality check function
 - -t 4 - t refers to the threads using depanding upon the per core threads
