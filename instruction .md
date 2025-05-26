@@ -1,6 +1,6 @@
 <!-- HEADER BANNER -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:2196f3,100:00bcd4&height=150&section=header&text=RNA-Seq%20Preparation%20%26%20FASTQ%20Download%20Guide&fontSize=32&fontColor=fff&animation=twinkling" alt="Header Banner"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=2196f3,42a5f5,80d8ff,00bcd4&height=150&section=header&text=RNA-Seq%20Preparation%20%26%20FASTQ%20Download%20Guide&fontSize=32&fontColor=ffffff&animation=twinkling" alt="Header Banner"/>
 </p>
 
 <p align="center">
