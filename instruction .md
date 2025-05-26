@@ -1,8 +1,6 @@
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,r,linux,bash,tensorflow,pytorch,jupyter,github,git,html,cpp,vscode" />
-  <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/pandas.svg" width="40" title="pandas" style="vertical-align:middle; margin-left:8px;"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:e96443,100:904e95&height=180&section=header&text=Hi%20I'm%20VampZie%20🦇&fontSize=40&fontColor=fff&animation=twinkling" alt="Waving Banner"/>
 </p>
-
 
 ---
 
