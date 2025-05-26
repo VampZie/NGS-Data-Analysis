@@ -84,15 +84,15 @@ check command: vdb-dump --version
 
 **Run quality check:**
 ```bash
-fastqc SRR1551114_1.fastq.gz SRR1551114_2.fastq.gz -o ~/fastq_qc_reports --progress
+fastqc SRR1551114_1.fastq.gz SRR1551114_2.fastq.gz -O ~/fastq_qc_reports --progress
 ```
 or
 ```
-fastqc -t 4 -o /home/vzscyborg/rnaseq/fastqc_rep /home/vzcyborg/datasets/rnads/SRR1551114_1.fastq.gz --progress
+fastqc -t 4 -o fastqc_1.fastq fastqc_2.fastq  -O /home/vzscyborg/rnaseq/fastqc_rep /home/vzcyborg/datasets/rnads/SRR1551114_1.fastq.gz --progress
 ```
 - fastqc - command calling the quality check function
 - -t 4 - t refers to the threads using depanding upon the per core threads
-- -o refers the path where the report of the quality check will save followed by the proper path
+- -O refers the path where the report of the quality check will save followed by the proper path
 - SRRxxxxxxxxx.fastq.gz - files on which quality check will run
 
 ---
