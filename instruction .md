@@ -1,14 +1,12 @@
-<!-- HEADER BANNER -->
 <p align="center">
   <img src="https://img.shields.io/badge/RNA--Seq%20Preparation%20%26%20FASTQ%20Download%20Guide-2196f3?logo=book&logoColor=white&style=for-the-badge&labelColor=1565c0" alt="Blue Educational Banner"/>
 </p>
-
 
 <p align="center">
   <img src="https://img.shields.io/badge/Educational%20Resource-Bioinformatics-blueviolet?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Level-Beginner%20to%20Intermediate-00bfff?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Workflow-RNA--Seq%20Pipeline-2196f3?style=for-the-badge"/>
-</p>
+</p>>
 
 
 ---
