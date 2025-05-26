@@ -1,13 +1,14 @@
 <!-- HEADER BANNER -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:e96443,100:904e95&height=150&section=header&text=RNA-Seq%20Preparation%20&%20FASTQ%20Download%20Guide&fontSize=32&fontColor=fff&animation=twinkling" alt="Header Banner"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:2196f3,100:00bcd4&height=150&section=header&text=RNA-Seq%20Preparation%20%26%20FASTQ%20Download%20Guide&fontSize=32&fontColor=fff&animation=twinkling" alt="Header Banner"/>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Educational%20Resource-Bioinformatics-blueviolet?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Level-Beginner%20to%20Intermediate-00bfff?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Workflow-RNA--Seq%20Pipeline-ff69b4?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Workflow-RNA--Seq%20Pipeline-2196f3?style=for-the-badge"/>
 </p>
+
 
 ---
 
