@@ -1,5 +1,6 @@
 <p align="center">
-  <img src="assets/banner.png" width="700" alt="RNA-Seq Banner"/>
+  <img src="https://skillicons.dev/icons?i=python,r,linux,bash,tensorflow,pytorch,jupyter,github,git,html,cpp,vscode" />
+  <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/pandas.svg" width="40" title="pandas" style="vertical-align:middle; margin-left:8px;"/>
 </p>
 
 
