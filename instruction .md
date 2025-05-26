@@ -210,6 +210,17 @@ samtools index -@ 1 /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR33542395_sort
 - For **gene/exon count matrix**, download reference annotation (e.g., from GENCODE) matching your genome build.
 - Use `featureCounts` with sorted BAM and annotation files.
 
+```
+featureCounts -T 3 -t exon -g gene_id -a /home/vzscyborg/ngs/datasets/gtf/gencode.vM36.primary_assembly.annotation.gtf -o /home/vzscyborg/ngs/output/SRR33542395/fc/counts.txt /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR33542395_sorted.bam
+```
+
+- featureCounts: program from the Subread package used to count reads mapped to genomic features (like genes or exons). 
+- -T 3: 	Use 3 CPU threads for faster performance.  
+- -t exon: 	Count exons as the feature type. Only lines with feature type == exon in the GTF file will be used. 
+- -g gene_id: 	Group exons by the gene_id attribute from the GTF file to produce gene-level counts. 
+- -a:  Path to the GTF annotation file, used to define the gene and exon features. 
+- -o: 	Output file name where the read counts per gene will be saved.
+- 	Input sorted BAM file (your aligned reads) that will be counted. 
 ---
 
 <p align="center">
