@@ -146,10 +146,11 @@ Another function is to do refernce genomce alignment
  Following comnand is for the generating the genemic index
  
 ```bash
-hisat2-build /home/vzscyborg/ngs/datasets/gtf/GRCm39.primary_assembly.genome.fa \
+hisat2-build -p 2 /home/vzscyborg/ngs/datasets/gtf/GRCm39.primary_assembly.genome.fa \
              /home/vzscyborg/ngs/output/SRR33542395/hisat/indx/GRCm39_index
 ```
--  hisat2-build - 	The HISAT2 utility that builds the index files from a reference genome (FASTA format) 
+-  hisat2-build - 	The HISAT2 utility that builds the index files from a reference genome (FASTA format)
+-  -p 2: number threads of the cpu using by this command 
 -  /home/vzscyborb... - path to the reference genome 
 -  grcm_index - This is the base name for the output index files. HISAT2 will generate 8 files named grcm_index.1.ht2, grcm_index.2.ht2, ..., grcm_index.8.ht2.
 
