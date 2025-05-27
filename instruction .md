@@ -75,6 +75,21 @@ check command: vdb-dump --version
 -  --temp ~/Downloads/tml: temporary directory to record the progress as too mucch large data could look like stuck while its downloading in backend
 -  --progress : to visualize the downloading progress
 
+## Downloading FIle using `prefetch`
+
+```
+prefetch SRR33583529
+```
+then convert the file to fastq formate suing the following command
+```
+fasterq-dump -e 3 SRR33583529 -O ~/ngs/mouse/ -o SRR33583529.fastq --progress
+```
+- -e : number of htreadds using for this command
+- SRR33583529: donwloaded file via prefetch or directory
+- -O : output directory only, no file name
+- -o : file name along with the fastq extension like SRR335853529.fastq
+- --progress: shows the progress done ( optional )
+
 
 ------------------------------------------------------------------------------------
 #   🧬 STARTING RNA-SEQ ANALYSIS 🧬                   
