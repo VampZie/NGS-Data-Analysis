@@ -133,7 +133,23 @@ fastp -i /home/vzscyborg/ngs/datasets/SRR33542395 \
 -  --html : for making the output report in html formate along with the file name 
 -  --thread define the number of thread fastp should use
 
-
+^^^^EVEN WHEN FASTP FAILS TO CLEAR QUALITY CHECK DO FORCEFULL TRIMMING^^^^
+1. Filter short inserts
+   ```
+   fastp -i SRR33583544_1_clean.fastq -I SRR33583544_2_clean.fastq -o r1.fastq -O r2.fastq --length_required 50
+   ```
+   
+2. Mark and remove duplicates
+   ```
+   samtools sort -o sorted.bam input.bam
+   samtools markdup sorted.bam dedup.bam
+   ```
+3. Check insert size distribution
+   Confirm if the entire library is composed of short inserts:
+   ```
+   picard CollectInsertSizeMetrics I=dedup.bam O=insert_size_metrics.txt H=insert_size_histogram.pdf
+   ```
+   
 ---
 
 ## ▶️ Run HISAT2
