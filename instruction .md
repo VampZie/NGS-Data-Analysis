@@ -103,7 +103,7 @@ fastqc SRR1551114_1.fastq.gz SRR1551114_2.fastq.gz -O ~/fastq_qc_reports --progr
 ```
 or
 ```
-fastqc -t 4 -o fastqc_1.fastq fastqc_2.fastq  -O /home/vzscyborg/rnaseq/fastqc_rep /home/vzcyborg/datasets/rnads/SRR1551114_1.fastq.gz --progress
+fastqc -t 4 /home/vzscyborg/ngs/mouse/31r1.fastq  /home/vzscyborg/ngs/mouse/31r2.fastq -O /home/vzscyborg/ngs/mouse/fqc --progress
 ```
 - fastqc - command calling the quality check function
 - -t 4 - t refers to the threads using depanding upon the per core threads
@@ -121,12 +121,7 @@ Fastp require to run if following conditions arises:
   4. verrepresented sequences
   5. 
 ```bash
-fastp -i /home/vzscyborg/ngs/datasets/SRR33542395 \
-      -o /home/vzscyborg/ngs/output/SRR33542395/fp/SRR33542395_clean.fastq \
-      --detect_adapter_for_pe \
-      --html /home/vzscyborg/ngs/output/SRR33542395/fp/SRR33542395_clean.html \
-      --json /home/vzscyborg/ngs/output/SRR33542395/fp/SRR33542395_clean.json \
-      --thread 1
+fastp -i /home/vzscyborg/ngs/mouse/31r1.fastq  -I /home/vzscyborg/ngs/mouse/31r2.fastq -o /home/vzscyborg/ngs/mouse/fp/31r1c.fastq -O /home/vzscyborg/ngs/mouse/fp/31r2c.fastq --detect_adapter_for_pe   --html /home/vzscyborg/ngs/mouse/fp/31c.html pe   --json /home/vzscyborg/ngs/mouse/fp/31c.json --thread  4
 ```
 - -i: for input file followed by file directory, if two read second read start with \-I (source directory) 
 -  -o: for output file followed by file directory with extension, if two out reads second read start with /-O (destination directory) 
@@ -174,11 +169,14 @@ hisat2-build -p 2 /home/vzscyborg/ngs/datasets/gtf/GRCm39.primary_assembly.genom
 
 For the alignment require multiple files for 2 input method one for genome index and another is cleaned fastq file generated from fastp
 
-```bash
+```bash for file having single read
 hisat2 -p 1 \
        -x /home/vzscyborg/ngs/output/SRR33542395/hisat/indx/grcm_index \
        -U /home/vzscyborg/ngs/output/SRR33542395/fp/SRR33542395_clean.fastq \
        -S /home/vzscyborg/ngs/output/SRR33542395/hisat/align/SRR33542395_hisat.sam
+```
+```bash for Data having two reads
+hisat2 -p 4 -x /home/vzscyborg/ngs/datasets/grcm39/m39_index  fastq -1 /home/vzscyborg/ngs/mouse/fp/31r1c.fastq -2 /home/vzscyborg/ngs/mouse/fp/31r2c.fastq -S /home/vzscyborg/ngs/mouse/hisat/31.sam
 ```
 -  hisat2 : HISAT2 is a fast and sensitive alignment tool for mapping sequencing reads (usually RNA-seq) to a reference genome. 
 - -x : Specifies the basename of the HISAT2 index for the reference genome to which you want to align your reads. This is the index you built earlier from the mouse genome (GRCm39). 
@@ -192,7 +190,7 @@ hisat2 -p 1 \
 
 ### 1. **Convert SAM → BAM**
 ```bash
-samtools view -@ 3 -s 0.5 -b /home/vzscyborg/ngs/output/SRR33542395/hisat/align/SRR33542395_hisat.sam > /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR33542395.bam
+samtools view -@ 4  -bS /home/vzscyborg/ngs/mouse/hisat/31.sam > /home/vzscyborg/ngs/mouse/smtl/31.bam
 ```
 - samtools view : Converts between different formats (SAM ⇄ BAM), filters, and subsamples reads 
 - -@ : 	Use 3 CPU threads to speed up the conversion. 
@@ -203,7 +201,7 @@ samtools view -@ 3 -s 0.5 -b /home/vzscyborg/ngs/output/SRR33542395/hisat/align/
 
 ### 2. **Sort BAM**
 ```bash
-samtools sort -@ 3 -o /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR35542395_sorted.bam /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR33542395.bam
+samtools sort -@ 4 -o /home/vzscyborg/ngs/mouse/smtl/31sorted.bam /home/vzscyborg/ngs/mouse/smtl/31.bam
 ```
 
 -  samtools sort : Convert Bam file into sorted bam file.
@@ -213,7 +211,7 @@ samtools sort -@ 3 -o /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR35542395_so
 
 ### 3. **Index Sorted BAM**
 ```bash
-samtools index -@ 3 -o /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR33542395.bai /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR33542395_sorted.bam
+samtools index -@ 4 -o /home/vzscyborg/ngs/mouse/smtl/31.bai /home/vzscyborg/ngs/mouse/smtl/31sorted.bam
 ```
 
 -  samtools index : Convert Sorted  Bam file into indexed bam file.
@@ -236,7 +234,7 @@ samtools index -@ 1 /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR33542395_sort
 - Use `featureCounts` with sorted BAM and annotation files.
 
 ```
-featureCounts -T 3 -t exon -g gene_id -a /home/vzscyborg/ngs/datasets/gtf/gencode.vM36.primary_assembly.annotation.gtf -o /home/vzscyborg/ngs/output/SRR33542395/fc/counts.txt /home/vzscyborg/ngs/output/SRR33542395/smtl/SRR33542395_sorted.bam
+featureCounts -T 3 -p -t exon -g gene_id -a /home/vzscyborg/ngs/mouse/gencode.vM37.primary_assembly.basic.annotation.gff3  -o /home/vzscyborg/ngs/mouse/fc/counts.txt /home/vzscyborg/ngs/mouse/smtl/31sorted.bam
 ```
 
 - featureCounts: program from the Subread package used to count reads mapped to genomic features (like genes or exons). 
