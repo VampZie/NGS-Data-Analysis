@@ -37,7 +37,7 @@ Even after Fastp, if reads fail quality checks or show insert size bias, force t
    samtools markdup sorted.bam dedup.bam
    ```
 🔹 3. Check Insert Size Distribution
-   Use Picard to confirm if the library has excessive short inserts or other anomalies.
+   Use Picard to confirm if the library has excessive short inserts or other anomalies. 
    Confirm if the entire library is composed of short inserts:
    ```
    picard CollectInsertSizeMetrics I=dedup.bam O=insert_size_metrics.txt H=insert_size_histogram.pdf
