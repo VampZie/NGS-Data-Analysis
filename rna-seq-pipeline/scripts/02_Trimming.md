@@ -21,7 +21,7 @@ fastp -i /home/vzscyborg/ngs/mouse/31r1.fastq  -I /home/vzscyborg/ngs/mouse/31r2
 -  --html : for making the output report in html formate along with the file name 
 -  --thread define the number of thread fastp should use
 
-## [!IMPORTANT] Force Trimming (If Quality Issues Persist)
+##  [!IMPORTANT]  Force Trimming (If Quality Issues Persist)
 Even after Fastp, if reads fail quality checks or show insert size bias, force trimming and cleanup must be performed manually.
 
 🔹 1. Filter Short Inserts
