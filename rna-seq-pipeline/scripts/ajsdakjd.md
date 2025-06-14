@@ -1,6 +1,6 @@
 # 🧪 Step 01: Quality Control with FastQC
 
-## 🎯 Objective
+## 🎯 why do we do it?
 Assess the quality of raw sequencing reads using **FastQC**, a tool that provides comprehensive metrics such as per-base quality, GC content, sequence duplication, and adapter contamination. This step ensures that only high-quality data proceed to downstream analysis.
 
 ---
