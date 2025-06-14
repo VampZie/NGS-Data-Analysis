@@ -17,5 +17,6 @@ fastqc -t 4 /home/vzscyborg/ngs/mouse/31r1.fastq  /home/vzscyborg/ngs/mouse/31r2
 ```
 - fastqc - command calling the quality check function
 - -t 4 - t refers to the threads using depanding upon the per core threads
+- two reads input files for processing
 - -O refers the path where the report of the quality check will save followed by the proper path
 - SRRxxxxxxxxx.fastq.gz - files on which quality check will run
