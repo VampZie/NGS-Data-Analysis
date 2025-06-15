@@ -36,3 +36,10 @@ hisat2 -p 4 -x /home/vzscyborg/ngs/datasets/grcm39/m39_index  fastq -1 /home/vzs
 -  -p 1 : Use 1 CPU thread for the alignment process. This limits HISAT2 to run on a single processor core 
 -  -U : Specifies the input file containing unpaired single-end reads in FASTQ format. This is the cleaned sequencing reads you want to align. 
 -  -S : Specifies the output file where the aligner will write the results in SAM format (Sequence Alignment/Map). This file contains detailed information on how each read aligns to the reference genome
+
+
+---
+---
+After successful alignment, you'll obtain a .sam file with mapping information. This file forms the foundation for transcript quantification and variant analysis in later stages.
+---
+---
