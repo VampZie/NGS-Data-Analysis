@@ -21,11 +21,11 @@ The `hisat2-build` utility constructs a **hierarchical FM index** from a referen
 ## 📥 Reference Genome Used
  Species: Mus musculus (mouse) 
 
- Assembly: GRCm39 (downloaded from NCBI) 
- 
+ Assembly: GRCm39 
  File Format: FASTA  
  
- File: GRCm39.primary_assembly.genome.fa 
+ File: GRCm39.primary_assembly.genome.fa [downloaded from GENCODE](https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M37/GRCm39.primary_assembly.genome.fa.gz) 
+ 
 
 ---
 
