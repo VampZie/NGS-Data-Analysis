@@ -19,14 +19,13 @@ hisat2 -p 1 \
 ```
 
 🧾 Parameters Explained
-Parameter |	Description
----
-hisat2	Command to launch the aligner
--p 1	Use 1 CPU thread for alignment
--x	Path to the HISAT2 genome index (built in Step 3)
--U	Input file for single-end reads (FASTQ format)
--S	Output file for alignments in SAM format
 
+-hisat2	Command to launch the aligner 
+-p 1	Use 1 CPU thread for alignment 
+-x	Path to the HISAT2 genome index (built in Step 3) 
+-U	Input file for single-end reads (FASTQ format) 
+-S	Output file for alignments in SAM format 
+ 
 for Data having two reads
 ```bash 
 hisat2 -p 4 -x /home/vzscyborg/ngs/datasets/grcm39/m39_index  fastq -1 /home/vzscyborg/ngs/mouse/fp/31r1c.fastq -2 /home/vzscyborg/ngs/mouse/fp/31r2c.fastq -S /home/vzscyborg/ngs/mouse/hisat/31.sam
