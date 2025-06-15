@@ -10,13 +10,16 @@ We use **HISAT2** for this task due to its high speed, low memory footprint, and
 
 ## 🛠️ Command 
 
-```bash for file having single read
+for file having single read
+```bash 
 hisat2 -p 1 \
        -x /home/vzscyborg/ngs/output/SRR33542395/hisat/indx/grcm_index \
        -U /home/vzscyborg/ngs/output/SRR33542395/fp/SRR33542395_clean.fastq \
        -S /home/vzscyborg/ngs/output/SRR33542395/hisat/align/SRR33542395_hisat.sam
 ```
-```bash for Data having two reads
+
+for Data having two reads
+```bash 
 hisat2 -p 4 -x /home/vzscyborg/ngs/datasets/grcm39/m39_index  fastq -1 /home/vzscyborg/ngs/mouse/fp/31r1c.fastq -2 /home/vzscyborg/ngs/mouse/fp/31r2c.fastq -S /home/vzscyborg/ngs/mouse/hisat/31.sam
 ```
 
