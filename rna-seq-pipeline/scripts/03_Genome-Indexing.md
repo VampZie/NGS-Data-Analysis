@@ -51,3 +51,13 @@ GRCm39_index.1.ht2
 GRCm39_index.2.ht2  
 ...  
 GRCm39_index.8.ht2  
+
+---
+---
+---
+
+This indexing step is critical and only needs to be performed once per reference genome. Once the index is built, it can be reused across multiple RNA-seq or DNA-seq alignment workflows using HISAT2.
+
+---
+---
+--=
