@@ -9,6 +9,8 @@ Genome indexing is a **prerequisite for aligning sequencing reads** to a referen
 
 The `hisat2-build` utility constructs a **hierarchical FM index** from a reference genome in FASTA format.
 
+### Installation: sudo apt install hisat2
+
 ---
 
 ## 🛠️ Command
