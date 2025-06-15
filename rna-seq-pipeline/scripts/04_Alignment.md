@@ -18,13 +18,13 @@ hisat2 -p 1 \
        -S /home/vzscyborg/ngs/output/SRR33542395/hisat/align/SRR33542395_hisat.sam
 ```
 
-🧾 Parameters Explained
+🧾 Parameters Explained 
 
--hisat2	Command to launch the aligner 
--p 1	Use 1 CPU thread for alignment 
--x	Path to the HISAT2 genome index (built in Step 3) 
--U	Input file for single-end reads (FASTQ format) 
--S	Output file for alignments in SAM format 
+- -hisat2 	Command to launch the aligner
+- -p 1	Use 1 CPU thread for alignment
+- -x	Path to the HISAT2 genome index (built in Step 3)
+- -U	Input file for single-end reads (FASTQ format)
+- -S	Output file for alignments in SAM format 
  
 for Data having two reads
 ```bash 
