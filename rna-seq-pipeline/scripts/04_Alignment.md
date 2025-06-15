@@ -1,4 +1,4 @@
-# 🧬 Step 04: Alignment Using HISAT2
+khud h# 🧬 Step 04: Alignment Using HISAT2
 
 ## 🎯 Why Do We Do It?
 Alignment is a **critical step** in RNA-seq and DNA-seq workflows where sequencing reads are mapped to a reference genome. This allows us to identify where each read originated from, enabling downstream analysis like gene expression quantification and variant discovery.
@@ -17,6 +17,15 @@ hisat2 -p 1 \
        -U /home/vzscyborg/ngs/output/SRR33542395/fp/SRR33542395_clean.fastq \
        -S /home/vzscyborg/ngs/output/SRR33542395/hisat/align/SRR33542395_hisat.sam
 ```
+
+🧾 Parameters Explained
+Parameter |	Description
+---
+hisat2	Command to launch the aligner
+-p 1	Use 1 CPU thread for alignment
+-x	Path to the HISAT2 genome index (built in Step 3)
+-U	Input file for single-end reads (FASTQ format)
+-S	Output file for alignments in SAM format
 
 for Data having two reads
 ```bash 
