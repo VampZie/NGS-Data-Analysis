@@ -5,6 +5,8 @@ Genome indexing is a **prerequisite for aligning sequencing reads** to a referen
 
 ---
 
+
+
 ## 🔧 Tool: `hisat2-build`
 
 The `hisat2-build` utility constructs a **hierarchical FM index** from a reference genome in FASTA format.
@@ -13,6 +15,8 @@ The `hisat2-build` utility constructs a **hierarchical FM index** from a referen
 ``` sudo apt install hisat2 ```
 
 ---
+
+
 
 ## 📥 Reference Genome Used
  Species: Mus musculus (mouse) 
@@ -25,6 +29,8 @@ The `hisat2-build` utility constructs a **hierarchical FM index** from a referen
 
 ---
 
+
+
 ## 🛠️ Command
 
 ```bash
@@ -35,6 +41,9 @@ hisat2-build -p 2 /home/vzscyborg/ngs/datasets/gtf/GRCm39.primary_assembly.genom
 -  -p 2: number threads of the cpu using by this command 
 -  /home/vzscyborb... - path to the reference genome 
 -  grcm_index - This is the base name for the output index files. HISAT2 will generate 8 files named grcm_index.1.ht2, grcm_index.2.ht2, ..., grcm_index.8.ht2.
+
+---
+
 
 
 ### 🔖 HISAT2 will generate eight index files:
