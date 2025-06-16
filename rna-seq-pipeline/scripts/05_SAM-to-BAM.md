@@ -16,7 +16,7 @@ SAM (Sequence Alignment/Map) files are human-readable but **large and inefficien
 samtools view -@ 4  -bS /home/vzscyborg/ngs/mouse/hisat/31.sam > /home/vzscyborg/ngs/mouse/smtl/31.bam
 ```
 
-🧾 Parameters
+### 🧾 Parameters
 
 - samtools view : Converts between different formats (SAM ⇄ BAM), filters, and subsamples reads 
 - -@ : 	Use 3 CPU threads to speed up the conversion. 
