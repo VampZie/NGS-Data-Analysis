@@ -127,7 +127,7 @@ which featureCounts
 ## ⚠️ Notes
 Some packages may require additional permissions or dependencies based on your system.
 
-Keep your ~/.bashrc or ~/.zshrc updated with $PATH exports for ease of use.
+Keep your ```~/.bashrc``` or ```~/.zshrc``` updated with ```$PATH``` exports for ease of use.
 
 Use Conda for a more portable and reproducible environment setup if sharing this pipeline across systems.
 ---
