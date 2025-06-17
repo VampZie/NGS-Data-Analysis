@@ -1,0 +1,5 @@
+sample,condition,fastq1,fastq2
+HFD1,HFD,34/34r1.fastq,34/34r2.fastq
+HFD2,HFD,35/35r1.fastq,35/35r2.fastq
+ND1,ND,30/30r1.fastq,30/30r2.fastq
+ND2,ND,31/31r1.fastq,31/31r2.fastq
