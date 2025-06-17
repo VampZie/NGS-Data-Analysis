@@ -46,56 +46,31 @@ Please consider the following before using:
 
 ```
 library(DESeq2)
-
-counts <- read.table("~/ngs/mouse/counts.txt", header=TRUE, row.names=1, check.names=FALSE)
-# Drop annotation columns if present
-counts <- counts[ , 6:ncol(counts) ]  # adjust if there are fewer columns before samples
-
-# Manually define sample conditions
-condition <- factor(c("HFD", "HFD", "ND", "ND"))  # order must match column order
-coldata <- data.frame(row.names = colnames(counts), condition)
-
-# Create DESeq2 dataset
-dds <- DESeqDataSetFromMatrix(countData = counts,
-                              colData = coldata,
-                              design = ~ condition)
-
-# Run DESeq2
-dds <- DESeq(dds)
-
-# Extract and save results
-res <- results(dds)
-resOrdered <- res[order(res$padj), ]
-write.csv(as.data.frame(resOrdered), file="deseq2_results.csv")
-
-
-
-#Filter Significant Genes
-# Adjust p-value threshold (commonly 0.05 or 0.01)
-sig_genes <- res[which(res$padj < 0.05), ]
-
-# Optional: Add log2 fold change threshold
-sig_genes <- sig_genes[abs(sig_genes$log2FoldChange) > 1, ]
-
-# Save
-write.csv(as.data.frame(sig_genes), "sig_genes.csv")
-# Adjust p-value threshold (commonly 0.05 or 0.01)
-sig_genes <- res[which(res$padj < 0.05), ]
-
-# Optional: Add log2 fold change threshold
-sig_genes <- sig_genes[abs(sig_genes$log2FoldChange) > 1, ]
-
-# Save
-write.csv(as.data.frame(sig_genes), "sig_genes.csv")
-
-
-#MA Plot (for gene-wise expression shift)
-plotMA(res, ylim=c(-5,5))
-
-
-#Volcano Plot
+library(org.Mm.eg.db)
+library(AnnotationDbi)
 library(ggplot2)
 
+# Load count matrix (pre-merged)
+counts <- read.table("counts.txt", header=TRUE, row.names=1, check.names=FALSE)
+counts <- counts[ , 6:ncol(counts) ]  # skip annotation columns if present
+
+# Sample metadata
+condition <- factor(c("HFD", "HFD", "ND", "ND"))
+coldata <- data.frame(row.names = colnames(counts), condition)
+
+# DESeq2 pipeline
+dds <- DESeqDataSetFromMatrix(countData = counts, colData = coldata, design = ~ condition)
+dds <- DESeq(dds)
+res <- results(dds)
+
+# Filter significant genes
+sig_genes <- res[which(res$padj < 0.05 & abs(res$log2FoldChange) > 1), ]
+write.csv(as.data.frame(sig_genes), "sig_genes.csv")
+
+# MA Plot
+plotMA(res, ylim=c(-5,5))
+
+# Volcano Plot
 res_df <- as.data.frame(res)
 res_df$gene <- rownames(res_df)
 res_df$significant <- res_df$padj < 0.05 & abs(res_df$log2FoldChange) > 1
@@ -106,81 +81,18 @@ ggplot(res_df, aes(x=log2FoldChange, y=-log10(padj), color=significant)) +
   theme_minimal() +
   labs(title="Volcano Plot", x="Log2 Fold Change", y="-log10 adjusted p-value")
 
-
-
-# Gene Annotation
-BiocManager::install("org.Mm.eg.db")
-library(org.Mm.eg.db)
-library(AnnotationDbi)
-
-gene_symbols <- mapIds(org.Mm.eg.db, 
+# Annotate gene symbols
+gene_symbols <- mapIds(org.Mm.eg.db,
                        keys = rownames(sig_genes),
-                       column = "SYMBOL",                 
+                       column = "SYMBOL",
                        keytype = "ENSEMBL",
                        multiVals = "first")
-
 sig_genes$symbol <- gene_symbols
 write.csv(as.data.frame(sig_genes), "sig_genes_annotated.csv")
 
+# Optional: Print session info
+sessionInfo()
 
-# Load libraries
-library(DESeq2)
-library(org.Mm.eg.db)
-library(AnnotationDbi)
-
-# Read featureCounts outputs
-fc1 <- read.table("HFD1.txt", header=TRUE, sep="\t", comment.char="#", row.names=1)
-fc2 <- read.table("HFD2.txt", header=TRUE, sep="\t", comment.char="#", row.names=1)
-fc3 <- read.table("ND1.txt",  header=TRUE, sep="\t", comment.char="#", row.names=1)
-fc4 <- read.table("ND2.txt",  header=TRUE, sep="\t", comment.char="#", row.names=1)
-
-# Extract only the counts (7th column onwards)
-count_data <- data.frame(
-  HFD1 = fc1[, 7],
-  HFD2 = fc2[, 7],
-  ND1  = fc3[, 7],
-  ND2  = fc4[, 7]
-)
-
-# Clean rownames to remove Ensembl version suffix
-rownames(count_data) <- sub("\\..*", "", rownames(count_data))
-
-# Build sample info
-col_data <- data.frame(
-  row.names = colnames(count_data),
-  condition = c("HFD", "HFD", "ND", "ND")
-)
-
-# Build DESeq2 dataset
-dds <- DESeqDataSetFromMatrix(countData = count_data,
-                              colData = col_data,
-                              design = ~ condition)
-
-# Run DESeq2
-dds <- DESeq(dds)
-res <- results(dds)
-
-# Clean Ensembl IDs again for mapping
-clean_ids <- sub("\\..*", "", rownames(res))
-
-# Map to gene symbols
-symbols <- mapIds(org.Mm.eg.db,
-                  keys = clean_ids,
-                  column = "SYMBOL",
-                  keytype = "ENSEMBL",
-                  multiVals = "first")
-
-# Add gene symbols to results
-res$symbol <- symbols
-
-# Sort by adjusted p-value
-res_ordered <- res[order(res$padj), ]
-
-# Save to file
-write.csv(as.data.frame(res_ordered), file = "deseq2_results.csv")
-
-# Print summary
-summary(res)
 ```
 ---
 ---
