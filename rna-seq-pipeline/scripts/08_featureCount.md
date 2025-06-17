@@ -3,14 +3,13 @@
 ## 🎯 Why Do We Do It?
 After alignment and BAM processing, the next step is to **quantify gene expression** by counting the number of reads mapping to genes or exons. `featureCounts` is a fast and accurate tool from the Subread package designed specifically for this task.
 
----
 
 ## 🔧 Tool: `featureCounts` (from Subread)
 
 - For **gene/exon count matrix**, download reference annotation (e.g., from GENCODE) matching your genome build.
 - Use `featureCounts` with sorted BAM and annotation files.
 
----
+
 
 ## 🛠️ Command
 
@@ -27,7 +26,7 @@ featureCounts -T 3 -p -t exon -g gene_id -a /home/vzscyborg/ngs/mouse/gencode.vM
 - -o: 	Output file name where the read counts per gene will be saved.
 - 	Input sorted BAM file (your aligned reads) that will be counted.
 
----
+
 ## ✅ Output
 A count matrix in tab-delimited format:
 /home/vzscyborg/ngs/mouse/fc/counts.txt
