@@ -30,6 +30,20 @@ Control_2,Control,2,/path/to/Control_2.bam
 
 ## R Code
 
+## 📘 R Code Disclaimer
+
+This R script includes a range of functions, parameters, and configurations that may not all be relevant to your specific use case.
+
+Please consider the following before using:
+
+- 🔧 **Modify accordingly**: Not all features may apply to your dataset or computational environment. Adjust the code to suit your needs.
+- ✅ **Use responsibly**: Ensure you're executing the code in an appropriate and authorized environment.
+- 🛡️ **Respect resource limits**: Avoid overloading shared or institutional computational resources. Unauthorized or excessive usage may lead to restrictions or loss of access.
+
+> ⚠️ **IMPORTANT**: All code provided is intended for educational and research purposes. Use it ethically, and always cite relevant tools or libraries when publishing results.
+
+
+
 ```
 library(DESeq2)
 
