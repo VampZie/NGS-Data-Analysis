@@ -21,10 +21,13 @@ samtools sort -@ 4 -o /home/vzscyborg/ngs/mouse/smtl/31sorted.bam /home/vzscybor
 -  -o : specify the output file followed by the output file path along with the filename with .bam file extension
 -  in last the directiory to the input bam file
 
-
+---
+---
 ## ✅ Output
 
 A sorted BAM file:
 /home/vzscyborg/ngs/mouse/smtl/31sorted.bam
 
 This sorted file is required for BAM indexing and gene-level feature counting in upcoming steps.
+---
+---
