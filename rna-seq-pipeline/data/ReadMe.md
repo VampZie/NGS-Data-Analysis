@@ -28,3 +28,32 @@ prefetch SRRxxxxxxx
 
 # Convert to FASTQ
 fasterq-dump SRRxxxxxxx
+```
+
+Note: Ensure SRA Toolkit is configured with correct cache and output directories.
+
+---
+
+### 🔹 2. Reference Genome and Annotation
+
+Both genome and annotation were downloaded from the **GENCODE** database for mouse:
+
+#### 🔸 Genome FASTA  
+- **File:** `GRCm39.primary_assembly.genome.fa`  
+- **URL:** [https://www.gencodegenes.org/mouse/](https://www.gencodegenes.org/mouse/)
+
+#### 🔸 Annotation GFF3  
+- **File:** `gencode.vM37.primary_assembly.basic.annotation.gff3`  
+- **Used for:** Read counting using `featureCounts`
+
+---
+
+### ⚠️ Notes
+
+- The annotation format (`.gff3`) **must match** the genome build used during alignment.
+- Always verify **chromosome naming consistency** (e.g., `chr1` vs `1`) between the **FASTA** and **GFF3/GTF** files.
+- The `fasterq-dump` output will typically contain **paired-end files**:
+  - `*_1.fastq`
+  - `*_2.fastq`
+ 
+---
