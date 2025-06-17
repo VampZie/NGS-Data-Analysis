@@ -182,7 +182,8 @@ write.csv(as.data.frame(res_ordered), file = "deseq2_results.csv")
 # Print summary
 summary(res)
 ```
-
+---
+---
 ## 🧠 Interpretation
 Look for:
 
@@ -191,3 +192,5 @@ Genes with adjusted ```p-value``` < ```0.05```
 ```Log2 Fold``` Change thresholds (e.g., >1 or <-1) for biological significance
 
 Pathway enrichment can follow using tools like ```clusterProfiler```, ```GSEA```, or ```Enrichr```
+---
+---
