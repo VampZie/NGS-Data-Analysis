@@ -1,92 +1,134 @@
-# NGS
-All about Basic NGS
-----------------------------
+# 🧬 RNA-Seq Pipeline for Mouse Transcriptomics
 
-Data mining using RNA seq data 
-==============================
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-1. Data Preprocessing
----------------------
-Before mining, RNA-Seq data needs to be processed:
+This repository provides a **modular, shell-and-R-based RNA-seq analysis workflow** for bulk transcriptome analysis in **mouse (Mus musculus)**. The pipeline is structured for clarity, educational reproducibility, and low-barrier adoption by students or researchers.
 
-    + Quality Control (QC): Use tools like FastQC.
+---
 
-    + Trimming: Remove adapters/low-quality reads (e.g., Trimmomatic).
+## 📁 Project Structure
+rna-seq-pipeline/
+├── config/ # Configuration files
+│ ├── paths.conf
+│ └── samples.csv
+| └── readme.md
+│
+├── data/ # Raw data (NOT uploaded - include download instructions)
+│ └── README.md
+│
+├── scripts/ # Shell and R scripts for analysis steps
+│ ├── 01_Quality-Control.md
+│ ├── 02_Trimming.md
+│ ├── 03_Genome-Indexing.md
+│ ├── 04_Alignment.md
+│ ├── 05_SAM-to-BAM.md
+│ ├── 06_Sorting.md
+│ ├── 07_BAM-Indexing.md
+│ ├── 08_featureCount.md
+│ └── 09_differential_gene_expression.md
+├──bash_commands.md ( optional )
+├── Libraries_Required.md
+├── LICENSE
+└── README.md
 
-    + Alignment: Map reads to the genome (e.g., HISAT2, STAR).
 
-    + Quantification: Count reads per gene/transcript (e.g., featureCounts, HTSeq).
+---
 
-    + Normalization: Use methods like TPM, RPKM, or DESeq2's normalization.
+## 🧪 Input Data
+
+### 🔹 Experimental Design
+
+- **HFD FMT (High-Fat Diet)**: 2 samples  
+- **ND FMT (Normal Diet)**: 2 samples  
+- Format: paired-end, mouse fecal microbiota transfer samples.
+
+### 🔹 Data Sources
+
+- Data downloaded from NCBI SRA using `prefetch` and `fasterq-dump`.
+- Files are structured like:
+data/raw/HFD1_1.fastq.gz
+data/raw/HFD1_2.fastq.gz
 
 
-2. Feature Extraction
----------------------
+#### Sample Configuration (in `config/samples.csv`):
 
-Turn raw counts into a data matrix:
-    + Rows = Genes
-    + Columns = Samples
-    + Values = Normalized expression levels
-This matrix is your basis for downstream mining
+```csv
+sample,condition,fastq1,fastq2
+HFD1,HFD,data/raw/HFD1_1.fastq.gz,data/raw/HFD1_2.fastq.gz
+HFD2,HFD,data/raw/HFD2_1.fastq.gz,data/raw/HFD2_2.fastq.gz
+ND1,ND,data/raw/ND1_1.fastq.gz,data/raw/ND1_2.fastq.gz
+ND2,ND,data/raw/ND2_1.fastq.gz,data/raw/ND2_2.fastq.gz
+```
 
-3. Common Data Mining Tasks
----------------------------
-Popular techniques used on RNA-Seq datasets:
+## 🧬 Reference Files
+### 🔸 Reference Genome (FASTA)
+GRCm39.primary_assembly.genome.fa
 
-	+ Differential Gene Expression (DGE)
-    		Identify genes that are up- or down-regulated under different conditions.
-    		Tools: DESeq2, edgeR, limma.
+Source: GENCODE Mouse
 
-	+ Clustering
-    		Group genes or samples based on expression profiles.
-    		Techniques: K-means, Hierarchical clustering, DBSCAN.
-    		Purpose: Discover co-expressed gene modules or sample subtypes.
+### 🔸 Annotation (GFF3)
+gencode.vM37.primary_assembly.basic.annotation.gff3
 
-	+ Classification
-    		Predict sample labels (e.g., disease vs. control).
-    		Methods: Random Forest, SVM, Neural Networks.
-    		Requires labeled datasets.
+Used in featureCounts for read quantification.
 
-	+ Dimensionality Reduction
-    		Reduce complexity while retaining key information.
-    		Methods: PCA, t-SNE, UMAP.
-    		Used for visualization or noise reduction.
+config/paths.conf example:
+```
+GENOME=/home/vzscyborg/ngs/mouse/GRCm39.primary_assembly.genome.fa
+GTF=/home/vzscyborg/ngs/mouse/gencode.vM37.primary_assembly.basic.annotation.gff3
+THREADS=8
+```
 
-	+ Gene Co-expression Network Analysis
-    		Construct networks showing how genes co-vary.
-    		Tool: WGCNA (Weighted Gene Co-expression Network Analysis).
-    		Helps find gene modules associated with traits.
 
-	+ Functional Enrichment & Pathway Analysis
-    		After finding differentially expressed genes or modules:
-        	Perform GO enrichment, KEGG pathway analysis, etc.
-        	Tools: clusterProfiler, gProfiler, Enrichr.
+---
+## ⚙️ Software & Environment
+See ```/Libraries_Required.md``` for installation details.
 
-4. Advanced Techniques (for data mining research)
--------------------------------------------------
-+ Deep Learning: Autoencoders, CNNs, RNNs for feature extraction or prediction.
-+ Multi-Omics Integration: Combine RNA-Seq with methylation, proteomics, etc.
-+ Text Mining: Link gene findings to literature using NLP.
+---
 
-5. Toolkits & Environment
-    + R/Bioconductor: DESeq2, edgeR, limma, WGCNA.
-    + Python: Scanpy, scikit-learn, pandas, TensorFlow.
-    + Galaxy: For GUI-based workflows without coding.
+## 📊 Analysis Workflow
+Each step is documented in /docs/ with detailed explanations and commands.
 
-=================================================================
------------------------------------------------------------------
-=================================================================
+Quality Control – 01_Quality-Control.md
 
-🔁 Typical RNA-Seq Mining Pipeline
+Trimming – 02_Trimming.md
 
-    Get data (e.g., from GEO or SRA)
+Indexing Genome – 03_Genome-Indexing.md
 
-    QC, alignment, quantification
+Alignment – 04_Alignment.md
 
-    Build expression matrix
+SAM to BAM – 05_SAM-to-BAM.md
 
-    Normalize and filter
+Sorting – 06_Sorting.md
 
-    Perform mining tasks (clustering, classification, etc.)
+BAM Indexing – 07_BAM-Indexing.md
 
-    Validate & interpret biologically
+Quantification – 08_featureCount.md
+
+Differential Expression – 09_differential_gene_expression.md
+
+---
+
+## 📌 Usage Notes
+🧷 This repository is educational and modular — adapt to your needs.
+
+🧼 Do not include raw FASTQ or BAM files in your repo. Use .gitignore.
+
+📜 Scripts are meant to run step-by-step with clarity, not automation (for now).
+
+---
+
+## 📄 License
+This project is licensed under the MIT License – see the LICENSE file for details.
+
+---
+## 🧑 Author
+Maintained by VampZie
+Note: This is a personal, not institutional, GitHub identity.
+---
+
+## 💬 Feedback
+
+Found a bug, typo, or want to suggest an improvement?  
+Please [open an issue](https://github.com/VampZie/rna-seq-pipeline/issues) or submit a pull request.
+
+📫 You can also reach out to me directly via [GitHub Discussions](https://github.com/VampZie/rna-seq-pipeline/discussions) or comments on this repository.
