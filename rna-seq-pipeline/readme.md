@@ -7,16 +7,17 @@ This repository provides a **modular, shell-and-R-based RNA-seq analysis workflo
 ---
 
 ## 📁 Project Structure
+
 rna-seq-pipeline/
 ├── config/ # Configuration files
 │ ├── paths.conf
-│ └── samples.csv
-| └── readme.md
-│
-├── data/ # Raw data (NOT uploaded - include download instructions)
+│ ├── samples.csv
 │ └── README.md
 │
-├── scripts/ # Shell and R scripts for analysis steps
+├── data/ # Raw and processed data (NOT uploaded here)
+│ └── README.md # Instructions to obtain raw data
+│
+├── scripts/ # Shell and R scripts for each analysis step
 │ ├── 01_Quality-Control.md
 │ ├── 02_Trimming.md
 │ ├── 03_Genome-Indexing.md
@@ -26,11 +27,11 @@ rna-seq-pipeline/
 │ ├── 07_BAM-Indexing.md
 │ ├── 08_featureCount.md
 │ └── 09_differential_gene_expression.md
-├──bash_commands.md ( optional )
-├── Libraries_Required.md
-├── LICENSE
-└── README.md
-
+│
+├── bash_commands.md # Optional: useful one-liners
+├── Libraries_Required.md # Required tools and installation
+├── LICENSE # License file (MIT)
+└── README.md # This file
 
 ---
 
@@ -59,6 +60,7 @@ HFD2,HFD,data/raw/HFD2_1.fastq.gz,data/raw/HFD2_2.fastq.gz
 ND1,ND,data/raw/ND1_1.fastq.gz,data/raw/ND1_2.fastq.gz
 ND2,ND,data/raw/ND2_1.fastq.gz,data/raw/ND2_2.fastq.gz
 ```
+---
 
 ## 🧬 Reference Files
 ### 🔸 Reference Genome (FASTA)
