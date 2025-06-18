@@ -12,11 +12,11 @@ This repository accompanies a comprehensive **DNA-seq analysis workflow** for hu
 - **Disease:** Prostate Adenocarcinoma
 - **Study Focus:** Matched primary tumor and metastatic lymph node samples from a single patient, with matched normal tissue (blood).
 - **Total Samples:** 5
-  - `19651_Blood` – Normal (Blood)
-  - `19651_LP` – Tumor (Left prostate biopsy)
-  - `19651_RP` – Tumor (Right prostate biopsy)
-  - `19651_LLN` – Metastatic lymph node (Left)
-  - `19651_RLN` – Metastatic lymph node (Right)
+  - `19651_Blood` – [Normal (Blood)](https://www.ncbi.nlm.nih.gov/biosample/14209982)
+  - `19651_LP` – [Tumor (Left prostate biopsy)](https://www.ncbi.nlm.nih.gov/biosample/14209984)
+  - `19651_RP` – [Tumor (Right prostate biopsy)](https://www.ncbi.nlm.nih.gov/biosample/14209986)
+  - `19651_LLN` – [Metastatic lymph node (Left)](https://www.ncbi.nlm.nih.gov/biosample/14209983)
+  - `19651_RLN` – [Metastatic lymph node (Right)](https://www.ncbi.nlm.nih.gov/biosample/14209985)
 
 ---
 
