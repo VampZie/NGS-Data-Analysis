@@ -70,12 +70,8 @@ gencode.vM37.primary_assembly.basic.annotation.gff3
 
 Used in featureCounts for read quantification.
 
-config/paths.conf example:
-```
-GENOME=/home/vzscyborg/ngs/mouse/GRCm39.primary_assembly.genome.fa
-GTF=/home/vzscyborg/ngs/mouse/gencode.vM37.primary_assembly.basic.annotation.gff3
-THREADS=8
-```
+[config/paths.conf](https://github.com/VampZie/NGS-Data-Analysis/blob/7c5f0776c35780074f6a0f699f85ba4311f0289b/rna-seq-pipeline/config/paths.conf)
+
 
 
 ---
