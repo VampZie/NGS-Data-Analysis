@@ -76,7 +76,7 @@ Used in featureCounts for read quantification.
 
 ---
 ## ⚙️ Software & Environment
-See ```/Libraries_Required.md``` for installation details.
+See [```/Libraries_Required.md```](https://github.com/VampZie/NGS-Data-Analysis/blob/cb604c83a31ba5f526db246dcb9e25d67d319523/rna-seq-pipeline/Libraries_Required.md) for installation details.
 
 ---
 
