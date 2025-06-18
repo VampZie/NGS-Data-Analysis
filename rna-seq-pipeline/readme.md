@@ -6,7 +6,8 @@ This repository provides a **modular, shell-and-R-based RNA-seq analysis workflo
 
 ---
 
-## 📁 Project Structure
+## 📁 Project Structure 
+
 
 rna-seq-pipeline/
 ├── config/                   # Configuration files
