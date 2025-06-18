@@ -1,92 +1,83 @@
-# NGS
-All about Basic NGS
-----------------------------
+<!-- BANNER: You can customize this SVG or use a GIF for animation! -->
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=2EC4B6&background=FFFFFF00&center=true&vCenter=true&lines=Welcome+to+NGS-Data-Analysis+%F0%9F%94%8A;Analyze+your+omics+data+with+ease!;RNA-seq+and+DNA-seq+pipelines+inside" alt="Animated Welcome Banner" />
+</p>
 
-Data mining using RNA seq data 
-==============================
+<p align="center">
+  <img src="https://img.shields.io/badge/NGS-Pipeline-blueviolet?style=for-the-badge&logo=databricks" alt="NGS Pipeline" />
+  <img src="https://img.shields.io/badge/RNA--seq-supported-brightgreen?style=for-the-badge&logo=RStudio" alt="RNA-seq" />
+  <img src="https://img.shields.io/badge/DNA--seq-coming_soon-ff69b4?style=for-the-badge&logo=python" alt="DNA-seq" />
+  <img src="https://img.shields.io/github/license/VampZie/NGS-Data-Analysis?style=for-the-badge" alt="License" />
+</p>
 
-1. Data Preprocessing
----------------------
-Before mining, RNA-Seq data needs to be processed:
+---
 
-    + Quality Control (QC): Use tools like FastQC.
+<div align="center">
+  
+  <img src="https://raw.githubusercontent.com/aleen42/badges/main/src/github.svg" width="30"/>
+  <h2>⚡ Next Generation Sequencing Data Analysis Hub ⚡</h2>
+  <sub>All your omics pipelines, scripts, and docs in one place</sub>
+  
+</div>
 
-    + Trimming: Remove adapters/low-quality reads (e.g., Trimmomatic).
+---
 
-    + Alignment: Map reads to the genome (e.g., HISAT2, STAR).
+## 📁 Repository Structure
 
-    + Quantification: Count reads per gene/transcript (e.g., featureCounts, HTSeq).
+```
+NGS-Data-Analysis/
+│
+├── rna-seq-pipeline/   # RNA-seq analysis scripts & docs
+├── dna-seq-pipeline/   # (coming soon)
+├── .gitignore
+├── LICENSE
+└── README.md
+```
 
-    + Normalization: Use methods like TPM, RPKM, or DESeq2's normalization.
+- [rna-seq-pipeline/](./rna-seq-pipeline/) — RNA-seq analysis scripts, configs, and documentation  
+- dna-seq-pipeline/ (coming soon) — DNA-seq analysis pipeline (planned)
 
+---
 
-2. Feature Extraction
----------------------
+## 🚀 Get Started
 
-Turn raw counts into a data matrix:
-    + Rows = Genes
-    + Columns = Samples
-    + Values = Normalized expression levels
-This matrix is your basis for downstream mining
+1. **Clone this repo**  
+   ```sh
+   git clone https://github.com/VampZie/NGS-Data-Analysis.git
+   ```
 
-3. Common Data Mining Tasks
----------------------------
-Popular techniques used on RNA-Seq datasets:
+2. **Browse to your pipeline of interest:**  
+   - For RNA-seq: [`rna-seq-pipeline/README.md`](./rna-seq-pipeline/README.md)
+   - DNA-seq coming soon!
 
-	+ Differential Gene Expression (DGE)
-    		Identify genes that are up- or down-regulated under different conditions.
-    		Tools: DESeq2, edgeR, limma.
+3. **Follow the instructions inside each pipeline folder.**
 
-	+ Clustering
-    		Group genes or samples based on expression profiles.
-    		Techniques: K-means, Hierarchical clustering, DBSCAN.
-    		Purpose: Discover co-expressed gene modules or sample subtypes.
+---
 
-	+ Classification
-    		Predict sample labels (e.g., disease vs. control).
-    		Methods: Random Forest, SVM, Neural Networks.
-    		Requires labeled datasets.
+## 💡 Why NGS-Data-Analysis?
 
-	+ Dimensionality Reduction
-    		Reduce complexity while retaining key information.
-    		Methods: PCA, t-SNE, UMAP.
-    		Used for visualization or noise reduction.
+- Modular pipelines for different NGS data types
+- Clear documentation & ready-to-use scripts
+- Easy expansion as new pipelines are added
+- Open source & collaborative
 
-	+ Gene Co-expression Network Analysis
-    		Construct networks showing how genes co-vary.
-    		Tool: WGCNA (Weighted Gene Co-expression Network Analysis).
-    		Helps find gene modules associated with traits.
+---
 
-	+ Functional Enrichment & Pathway Analysis
-    		After finding differentially expressed genes or modules:
-        	Perform GO enrichment, KEGG pathway analysis, etc.
-        	Tools: clusterProfiler, gProfiler, Enrichr.
+## 🛠️ Technologies & Tools
 
-4. Advanced Techniques (for data mining research)
--------------------------------------------------
-+ Deep Learning: Autoencoders, CNNs, RNNs for feature extraction or prediction.
-+ Multi-Omics Integration: Combine RNA-Seq with methylation, proteomics, etc.
-+ Text Mining: Link gene findings to literature using NLP.
+![R](https://img.shields.io/badge/R-Bioconductor-276DC3?style=flat-square&logo=r)
+![Python](https://img.shields.io/badge/Python-Data%20Science-FFD43B?style=flat-square&logo=python)
+![Nextflow](https://img.shields.io/badge/Nextflow-Workflow-16A085?style=flat-square)
+![Galaxy](https://img.shields.io/badge/Galaxy-Platform-F9DC3E?style=flat-square)
 
-5. Toolkits & Environment
-    + R/Bioconductor: DESeq2, edgeR, limma, WGCNA.
-    + Python: Scanpy, scikit-learn, pandas, TensorFlow.
-    + Galaxy: For GUI-based workflows without coding.
+---
 
-=================================================================
------------------------------------------------------------------
-=================================================================
+## 📜 License
 
-🔁 Typical RNA-Seq Mining Pipeline
+Licensed under the [MIT License](./LICENSE).
 
-    Get data (e.g., from GEO or SRA)
+---
 
-    QC, alignment, quantification
-
-    Build expression matrix
-
-    Normalize and filter
-
-    Perform mining tasks (clustering, classification, etc.)
-
-    Validate & interpret biologically
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=2000&color=F37335&background=FFFFFF00&center=true&vCenter=true&lines=Happy+Analyzing!+%F0%9F%92%AB" alt="Happy Analyzing Banner" />
+</p>
