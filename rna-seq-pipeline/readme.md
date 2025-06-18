@@ -117,7 +117,8 @@ This project is licensed under the MIT License – see the [LICENSE](https://git
 
 ---
 ## 🧑 Author
-Maintained by VampZie
+Maintained by VampZie 
+
 Note: This is a personal, not institutional, GitHub identity.
 ---
 
