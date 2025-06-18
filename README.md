@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=900&color=2EC4B6&background=FFFFFF00&center=true&vCenter=true&lines=Welcome+to+NGS-Data-Analysis+%F0%9F%94%8A;Your+central+hub+for+omics+data+analysis!;  RNA-seq+and+DNA-seq+pipelines+inside..." alt="Animated Welcome Banner" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=900&color=2EC4B6&background=FFFFFF00&center=true&vCenter=true&lines=Welcome+to+NGS-Data-Analysis+%F0%9F%94%8A;Your+central+hub+for+omics+data+analysis!;RNA-seq+and+DNA-seq+pipelines+inside..." alt="Animated Welcome Banner" />
 </p>
 
 <p align="center">
