@@ -8,7 +8,7 @@ This repository provides a **modular, shell-and-R-based RNA-seq analysis workflo
 
 ## 📁 Project Structure  
 
-
+```
 rna-seq-pipeline/
 ├── config/                   # Configuration files
 │   ├── paths.conf
@@ -33,7 +33,7 @@ rna-seq-pipeline/
 ├── Libraries_Required.md     # Required tools and installation
 ├── LICENSE                   # License file (MIT)
 └── README.md                 # Main project documentation
-
+```
 
 
 ---
