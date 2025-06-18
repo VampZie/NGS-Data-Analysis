@@ -1,0 +1,44 @@
+# Ignore raw sequencing data (never commit these!)
+data/*.fastq
+data/*.fastq.gz
+data/*.fq
+data/*.fq.gz
+data/*.bam
+data/*.sam
+
+# Ignore intermediate and output files
+*.log
+*.tmp
+*.out
+*.tab
+*.counts
+*.idx
+
+# Ignore reference genomes and annotation files (if not sharing)
+*.fa
+*.fasta
+*.gff
+*.gff3
+*.gtf
+
+# R/RStudio files
+.Rhistory
+.RData
+.Rproj.user/
+.Ruserdata
+
+# Python/Jupyter files
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# macOS and Windows system files
+.DS_Store
+Thumbs.db
+
+# VSCode configuration
+.vscode/
+
+# Other editor or OS hidden files
+*.swp
+*~
