@@ -54,15 +54,9 @@ data/raw/HFD1_1.fastq.gz
 data/raw/HFD1_2.fastq.gz
 
 
-#### Sample Configuration (in `config/samples.csv`):
+#### Sample Configuration :
+[in `config/samples.csv`](https://github.com/VampZie/NGS-Data-Analysis/blob/b3a36de5e152222c6d54e06f289688cdacab4b15/rna-seq-pipeline/config/sample.csv)
 
-```csv
-sample,condition,fastq1,fastq2
-HFD1,HFD,data/raw/HFD1_1.fastq.gz,data/raw/HFD1_2.fastq.gz
-HFD2,HFD,data/raw/HFD2_1.fastq.gz,data/raw/HFD2_2.fastq.gz
-ND1,ND,data/raw/ND1_1.fastq.gz,data/raw/ND1_2.fastq.gz
-ND2,ND,data/raw/ND2_1.fastq.gz,data/raw/ND2_2.fastq.gz
-```
 ---
 
 ## 🧬 Reference Files
