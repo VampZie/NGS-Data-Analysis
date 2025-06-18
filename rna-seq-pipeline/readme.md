@@ -9,29 +9,29 @@ This repository provides a **modular, shell-and-R-based RNA-seq analysis workflo
 ## 📁 Project Structure
 
 rna-seq-pipeline/
-├── config/ # Configuration files
-│ ├── paths.conf
-│ ├── samples.csv
-│ └── README.md
+├── config/                   # Configuration files
+│   ├── paths.conf
+│   ├── samples.csv
+│   └── README.md
 │
-├── data/ # Raw and processed data (NOT uploaded here)
-│ └── README.md # Instructions to obtain raw data
+├── data/                     # Raw and processed data (NOT uploaded here)
+│   └── README.md             # Instructions to obtain raw data
 │
-├── scripts/ # Shell and R scripts for each analysis step
-│ ├── 01_Quality-Control.md
-│ ├── 02_Trimming.md
-│ ├── 03_Genome-Indexing.md
-│ ├── 04_Alignment.md
-│ ├── 05_SAM-to-BAM.md
-│ ├── 06_Sorting.md
-│ ├── 07_BAM-Indexing.md
-│ ├── 08_featureCount.md
-│ └── 09_differential_gene_expression.md
+├── scripts/                  # Shell and R scripts for each analysis step
+│   ├── 01_Quality-Control.md
+│   ├── 02_Trimming.md
+│   ├── 03_Genome-Indexing.md
+│   ├── 04_Alignment.md
+│   ├── 05_SAM-to-BAM.md
+│   ├── 06_Sorting.md
+│   ├── 07_BAM-Indexing.md
+│   ├── 08_featureCount.md
+│   └── 09_differential_gene_expression.md
 │
-├── bash_commands.md # Optional: useful one-liners
-├── Libraries_Required.md # Required tools and installation
-├── LICENSE # License file (MIT)
-└── README.md # This file
+├── bash_commands.md          # Optional: useful one-liners
+├── Libraries_Required.md     # Required tools and installation
+├── LICENSE                   # License file (MIT)
+└── README.md                 # Main project documentation
 
 ---
 
