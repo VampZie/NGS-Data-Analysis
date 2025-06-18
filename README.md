@@ -1,6 +1,5 @@
-<!-- BANNER: You can customize this SVG or use a GIF for animation! -->
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=2EC4B6&background=FFFFFF00&center=true&vCenter=true&lines=Welcome+to+NGS-Data-Analysis+%F0%9F%94%8A;Analyze+your+omics+data+with+ease!;RNA-seq+and+DNA-seq+pipelines+inside" alt="Animated Welcome Banner" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=900&color=2EC4B6&background=FFFFFF00&center=true&vCenter=true&lines=Welcome+to+NGS-Data-Analysis+%F0%9F%94%8A;Your+central+hub+for+omics+data+analysis!;RNA-seq+and+DNA-seq+pipelines+inside..." alt="Animated Welcome Banner" />
 </p>
 
 <p align="center">
@@ -13,11 +12,9 @@
 ---
 
 <div align="center">
-  
   <img src="https://raw.githubusercontent.com/aleen42/badges/main/src/github.svg" width="30"/>
   <h2>⚡ Next Generation Sequencing Data Analysis Hub ⚡</h2>
   <sub>All your omics pipelines, scripts, and docs in one place</sub>
-  
 </div>
 
 ---
@@ -34,23 +31,16 @@ NGS-Data-Analysis/
 └── README.md
 ```
 
-- [rna-seq-pipeline/](./rna-seq-pipeline/) — RNA-seq analysis scripts, configs, and documentation  
+- [`rna-seq-pipeline/`](./rna-seq-pipeline/) — RNA-seq analysis scripts, configs, and documentation  
 - dna-seq-pipeline/ (coming soon) — DNA-seq analysis pipeline (planned)
 
 ---
 
-## 🚀 Get Started
+## 🚦 How to Use
 
-1. **Clone this repo**  
-   ```sh
-   git clone https://github.com/VampZie/NGS-Data-Analysis.git
-   ```
-
-2. **Browse to your pipeline of interest:**  
-   - For RNA-seq: [`rna-seq-pipeline/README.md`](./rna-seq-pipeline/README.md)
-   - DNA-seq coming soon!
-
-3. **Follow the instructions inside each pipeline folder.**
+- Navigate to the pipeline folder relevant to your analysis.
+- Each folder contains scripts, documentation, and step-by-step instructions for its workflow.
+- This repository is modular—new sequencing analysis pipelines can be added as new folders.
 
 ---
 
@@ -58,7 +48,7 @@ NGS-Data-Analysis/
 
 - Modular pipelines for different NGS data types
 - Clear documentation & ready-to-use scripts
-- Easy expansion as new pipelines are added
+- Easy expansion for future analysis types
 - Open source & collaborative
 
 ---
