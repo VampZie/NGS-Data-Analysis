@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.icons8.com/fluency/96/dna-helix.png" width="90" alt="RNA-Seq">
+  <img src="./assets/dna-helix.png" width="90" alt="RNA-Seq">
 </p>
 
 <h1 align="center" style="font-size:2.6em; font-weight:bold;">🧬 RNA-Seq Pipeline for Mouse Transcriptomics</h1>
