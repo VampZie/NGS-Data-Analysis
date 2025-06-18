@@ -81,7 +81,7 @@ See [```/Libraries_Required.md```](https://github.com/VampZie/NGS-Data-Analysis/
 ---
 
 ## 📊 Analysis Workflow
-Each step is documented in /docs/ with detailed explanations and commands.
+Each step is documented in [/script](https://github.com/VampZie/NGS-Data-Analysis/tree/a9ab6658ce3ef498704345eb79ba0f903220b381/rna-seq-pipeline/scripts) with detailed explanations and commands.
 
 Quality Control – 01_Quality-Control.md
 
