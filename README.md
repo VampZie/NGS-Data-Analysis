@@ -12,7 +12,7 @@
 ---
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/aleen42/badges/main/src/github.svg" width="30"/>
+
   <h2>⚡ Next Generation Sequencing Data Analysis Hub ⚡</h2>
   <sub>All your omics pipelines, scripts, and docs in one place</sub>
 </div>
