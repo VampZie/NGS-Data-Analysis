@@ -127,7 +127,8 @@ Note: This is a personal, not institutional, GitHub identity.
 ## 💬 Feedback
 
 Found a bug, typo, or want to suggest an improvement?  
+Please [open an issue](https://github.com/VampZie/NGS-Data-Analysis/issues) or [start a discussion](https://github.com/VampZie/NGS-Data-Analysis/discussions).
 
-Please [open an issue](https://github.com/VampZie/NGS-Data-Analysis/blob/a0ffc5a0e8736532646cc6a562e8918c98f6c202/.github/ISSUE_TEMPLATE/custom.md) or submit a pull request.
+📫 You can also reach out via comments on this repository.
 
-📫 You can also reach out to me directly via [GitHub Discussions](https://github.com/VampZie/rna-seq-pipeline/discussions) or comments on this repository.
+---
