@@ -1,0 +1,6 @@
+sample_id,tissue_type,is_tumor,sra_id
+19651_Blood,blood,FALSE,SRS6218633
+19651_LP,prostate_left,TRUE,SRS6218636
+19651_RP,prostate_right,TRUE,SRS6218638
+19651_LLN,lymph_left,TRUE,SRS6218634
+19651_RLN,lymph_right,TRUE,SRS6218637
