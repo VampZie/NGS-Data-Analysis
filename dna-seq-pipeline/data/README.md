@@ -24,7 +24,7 @@ This repository accompanies a comprehensive **DNA-seq analysis workflow** for hu
 
 ### 🔹 1. Raw Sequencing Data
 
-- **Source:** [NCBI SRA](https://www.ncbi.nlm.nih.gov/sra)
+- **Source:** [NCBI SRA]([https://www.ncbi.nlm.nih.gov/sra](https://www.ncbi.nlm.nih.gov/biosample?LinkName=bioproject_biosample_all&from_uid=608841))
 - **Tools Used:**
   - [`prefetch`](https://github.com/ncbi/sra-tools) – to download `.sra` files
   - [`fasterq-dump`](https://github.com/ncbi/sra-tools) – to convert `.sra` to `.fastq`
