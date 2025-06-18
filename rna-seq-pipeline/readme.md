@@ -113,7 +113,7 @@ Differential Expression – 09_differential_gene_expression.md
 ---
 
 ## 📄 License
-This project is licensed under the MIT License – see the LICENSE file for details.
+This project is licensed under the MIT License – see the [LICENSE](https://github.com/VampZie/NGS-Data-Analysis/blob/f9385362892099133b6d5d70bb84157fb688183b/LICENSE) file for details.
 
 ---
 ## 🧑 Author
