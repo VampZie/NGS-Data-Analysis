@@ -9,7 +9,12 @@ Assess the quality of raw sequencing reads using **FastQC**, a tool that provide
 
 **Run quality check:**
 ```bash
-fastqc -t 4 /home/vzscyborg/ngs/mouse/31r1.fastq  /home/vzscyborg/ngs/mouse/31r2.fastq -O /home/vzscyborg/ngs/mouse/fqc --progress
+# for Normal 
+fastqc -t 4 SRR7665835_1.fastq SRR7665835_2.fastq -O ~/dsa/35/fqc --progress
+
+# for Tumor bulk
+fastqc -t 4 SRR7665834_1.fastq SRR7665834_2.fastq -O ~/dsa/34/fqc --progress
+
 ```
 - fastqc - command calling the quality check function
 - -t 4 - t refers to the threads using depanding upon the per core threads
