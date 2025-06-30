@@ -15,9 +15,7 @@ Use Fastp **when the following conditions arise** in FastQC reports:
 ```bash
 #For normal
 fastp -i SRR7665835_1.fastq -I SRR7665835_2.fastq -o ~/dsa/35/fp/35r1c.fastq -O ~/dsa/35/fp/35r2c.fastq --detect_adapter_for_pe --html ~/dsa/35/fp/35c.html --jsom ~/dsa/35/fp/35c.json --thread 4
-#For tumor bulk
-fastp -i SRR7665834_1.fastq -I SRR7665834_2.fastq -o ~/dsa/34/fp/34r1c.fastq -O ~/dsa/34/fp/34r2c.fastq --detect_adapter_for_pe --html ~/dsa/34/fp/34c.html --json ~/dsa/34/fp/34c.json --thread 4
-
+#For tumor bulk Trimming not done , as quality is already meet the requirement.
 
 ```
 ### 🧾 Parameters Explained
