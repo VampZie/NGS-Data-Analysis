@@ -1,6 +1,8 @@
-sample_id,tissue_type,is_tumor,sra_id
-19651_Blood,blood,FALSE,SRS6218633
-19651_LP,prostate_left,TRUE,SRS6218636
-19651_RP,prostate_right,TRUE,SRS6218638
-19651_LLN,lymph_left,TRUE,SRS6218634
-19651_RLN,lymph_right,TRUE,SRS6218637
+sample_id,subject_id,condition,sra_accession
+Her2_Normal,Her2_001,normal,SRR7665835
+Her2_TumorBulk,Her2_001,tumor,SRR7665834
+Cluster_1,Her2_001,tumor,SRR7665833
+Cluster_2,Her2_001,tumor,SRR7665832
+Cluster_3,Her2_001,tumor,SRR7665831
+Cluster_4,Her2_001,tumor,SRR7665830
+Cluster_5,Her2_001,tumor,SRR7665829
