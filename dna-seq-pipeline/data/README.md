@@ -12,37 +12,28 @@ This repository contains a comprehensive **DNA-seq analysis workflow** for human
 - **Disease:** Her2-positive Breast Cancer
 - **Study Focus:** Tumor cell clusters and matched normal tissue from a single patient
 - **Total Samples:** 7  
-  - `SRR7665835` – **Normal** (blood/tissue matched)  
-  - `SRR7665834` – **Tumor Bulk**  
-  - `SRR7665833` – **Cell Cluster 1**  
-  - `SRR7665832` – **Cell Cluster 2**  
-  - `SRR7665831` – **Cell Cluster 3**  
-  - `SRR7665830` – **Cell Cluster 4**  
-  - `SRR7665829` – **Cell Cluster 5**  
+  - [`SRR7665835`](https://www.ebi.ac.uk/ena/browser/view/SRR7665835) – **Normal** (blood/tissue matched)  
+  - [`SRR7665834`](https://www.ebi.ac.uk/ena/browser/view/SRR7665834) – **Tumor Bulk**  
+  - [`SRR7665833`](https://www.ebi.ac.uk/ena/browser/view/SRR7665833) – **Cell Cluster 1**  
+  - [`SRR7665832`](https://www.ebi.ac.uk/ena/browser/view/SRR7665832) – **Cell Cluster 2**  
+  - [`SRR7665831`](https://www.ebi.ac.uk/ena/browser/view/SRR7665831) – **Cell Cluster 3**  
+  - [`SRR7665830`](https://www.ebi.ac.uk/ena/browser/view/SRR7665830) – **Cell Cluster 4**  
+  - [`SRR7665829`](https://www.ebi.ac.uk/ena/browser/view/SRR7665829) – **Cell Cluster 5**  
 ---
 
 ## 📥 Data Acquisition
 
 ### 🔹 1. Raw Sequencing Data
 
-- **Source:** [NCBI SRA](https://www.ncbi.nlm.nih.gov/sra/?term=SRP158874)  
+- **Source:** [European Nucleotide Archieve]((https://www.ebi.ac.uk/ena/browser))  
 - **Tools Required:**
-  - [`prefetch`](https://github.com/ncbi/sra-tools) – to download `.sra` files  
-  - [`fasterq-dump`](https://github.com/ncbi/sra-tools) – to extract `.fastq` files  
-
+  - wget
+  - gunzip
 #### 📦 Example Commands
 
 ```bash
 # Download and convert Normal Sample
-prefetch SRR7665835
-fasterq-dump SRR7665835 --split-files --progress
-
-# Download and convert Tumor Bulk
-prefetch SRR7665834
-fasterq-dump SRR7665834 --split-files --progress
-
-# Download and convert Cell Cluster 1
-prefetch SRR7665833
-fasterq-dump SRR7665833 --split-files --progress
+wget https://www.ebi.ac.uk/ena/browser/view/SRR7665835
+gunzip SRR7665835.fastq.gz
 
 # (Repeat similarly for other SRR IDs)
