@@ -1,6 +1,6 @@
-# 🧬 DNA-seq Analysis Workflow – Matched Tumor-Normal from Human Prostate Cancer
+# 🧬 DNA-seq Analysis Workflow – Matched Tumor-Normal from Her2+ Breast Cancer
 
-This repository accompanies a comprehensive **DNA-seq analysis workflow** for human cancer, focusing on whole genome sequencing (WGS) of matched **tumor and normal** samples from **prostate adenocarcinoma**. It supports somatic variant calling, tumor evolution exploration, and potential driver mutation detection.
+This repository contains a comprehensive **DNA-seq analysis workflow** for human cancer, focusing on **whole-genome sequencing (WGS)** of **matched tumor and normal samples** from a Her2-positive breast cancer patient. The pipeline supports somatic variant calling, clonality analysis, and tumor heterogeneity assessment.
 
 ---
 
@@ -9,14 +9,17 @@ This repository accompanies a comprehensive **DNA-seq analysis workflow** for hu
 ### 🔹 Biological Context
 
 - **Organism:** *Homo sapiens* (Human)
-- **Disease:** Prostate Adenocarcinoma
-- **Study Focus:** Matched primary tumor and metastatic lymph node samples from a single patient, with matched normal tissue (blood).
-- **Total Samples:** 5
-  - `19651_Blood` – [Normal (Blood)](https://www.ncbi.nlm.nih.gov/biosample/14209982)
-  - `19651_LP` – [Tumor (Left prostate biopsy)](https://www.ncbi.nlm.nih.gov/biosample/14209984)
-  - `19651_RP` – [Tumor (Right prostate biopsy)](https://www.ncbi.nlm.nih.gov/biosample/14209986)
-  - `19651_LLN` – [Metastatic lymph node (Left)](https://www.ncbi.nlm.nih.gov/biosample/14209983)
-  - `19651_RLN` – [Metastatic lymph node (Right)](https://www.ncbi.nlm.nih.gov/biosample/14209985)
+- **Disease:** Her2-positive Breast Cancer
+- **Study Focus:** Tumor cell clusters and matched normal tissue from a single patient
+- **Total Samples:** 8  
+  - `SRR7665835` – **Normal** (blood/tissue matched)  
+  - `SRR7665834` – **Tumor Bulk**  
+  - `SRR7665833` – **Cell Cluster 1**  
+  - `SRR7665832` – **Cell Cluster 2**  
+  - `SRR7665831` – **Cell Cluster 3**  
+  - `SRR7665830` – **Cell Cluster 4**  
+  - `SRR7665829` – **Cell Cluster 5**  
+  - *(SRR7665835 also mentioned as cluster 8, likely a duplication/mislabel)*
 
 ---
 
@@ -24,13 +27,24 @@ This repository accompanies a comprehensive **DNA-seq analysis workflow** for hu
 
 ### 🔹 1. Raw Sequencing Data
 
-- **Source:** [NCBI SRA]([https://www.ncbi.nlm.nih.gov/sra](https://www.ncbi.nlm.nih.gov/biosample?LinkName=bioproject_biosample_all&from_uid=608841))
-- **Tools Used:**
-  - [`prefetch`](https://github.com/ncbi/sra-tools) – to download `.sra` files
-  - [`fasterq-dump`](https://github.com/ncbi/sra-tools) – to convert `.sra` to `.fastq`
+- **Source:** [NCBI SRA](https://www.ncbi.nlm.nih.gov/sra/?term=SRP158874)  
+- **Tools Required:**
+  - [`prefetch`](https://github.com/ncbi/sra-tools) – to download `.sra` files  
+  - [`fasterq-dump`](https://github.com/ncbi/sra-tools) – to extract `.fastq` files  
+
+#### 📦 Example Commands
 
 ```bash
-# Example commands
-prefetch SRS6218633  # 19651_Blood
-fasterq-dump SRS6218633
-```
+# Download and convert Normal Sample
+prefetch SRR7665835
+fasterq-dump SRR7665835 --split-files --progress
+
+# Download and convert Tumor Bulk
+prefetch SRR7665834
+fasterq-dump SRR7665834 --split-files --progress
+
+# Download and convert Cell Cluster 1
+prefetch SRR7665833
+fasterq-dump SRR7665833 --split-files --progress
+
+# (Repeat similarly for other SRR IDs)
