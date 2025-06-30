@@ -13,7 +13,12 @@ Use Fastp **when the following conditions arise** in FastQC reports:
 ## 🛠️ Command
 
 ```bash
-fastp -i /home/vzscyborg/ngs/mouse/31r1.fastq  -I /home/vzscyborg/ngs/mouse/31r2.fastq -o /home/vzscyborg/ngs/mouse/fp/31r1c.fastq -O /home/vzscyborg/ngs/mouse/fp/31r2c.fastq --detect_adapter_for_pe   --html /home/vzscyborg/ngs/mouse/fp/31c.html pe   --json /home/vzscyborg/ngs/mouse/fp/31c.json --thread  4
+#For normal
+fastp -i SRR7665835_1.fastq -I SRR7665835_2.fastq -o ~/dsa/35/fp/35r1c.fastq -O ~/dsa/35/fp/35r2c.fastq --detect_adapter_for_pe --html ~/dsa/35/fp/35c.html --jsom ~/dsa/35/fp/35c.json --thread 4
+#For tumor bulk
+fastp -i SRR7665834_1.fastq -I SRR7665834_2.fastq -o ~/dsa/34/fp/34r1c.fastq -O ~/dsa/34/fp/34r2c.fastq --detect_adapter_for_pe --html ~/dsa/34/fp/34c.html --json ~/dsa/34/fp/34c.json --thread 4
+
+
 ```
 ### 🧾 Parameters Explained
 - -i: for input file followed by file directory, if two read second read start with \-I (source directory) 
