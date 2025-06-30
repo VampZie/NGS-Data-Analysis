@@ -11,7 +11,7 @@ This repository contains a comprehensive **DNA-seq analysis workflow** for human
 - **Organism:** *Homo sapiens* (Human)
 - **Disease:** Her2-positive Breast Cancer
 - **Study Focus:** Tumor cell clusters and matched normal tissue from a single patient
-- **Total Samples:** 8  
+- **Total Samples:** 7  
   - `SRR7665835` – **Normal** (blood/tissue matched)  
   - `SRR7665834` – **Tumor Bulk**  
   - `SRR7665833` – **Cell Cluster 1**  
@@ -19,8 +19,6 @@ This repository contains a comprehensive **DNA-seq analysis workflow** for human
   - `SRR7665831` – **Cell Cluster 3**  
   - `SRR7665830` – **Cell Cluster 4**  
   - `SRR7665829` – **Cell Cluster 5**  
-  - *(SRR7665835 also mentioned as cluster 8, likely a duplication/mislabel)*
-
 ---
 
 ## 📥 Data Acquisition
