@@ -15,7 +15,8 @@ dna-seq-pipeline/
 ├── scripts/
 │   ├── 01_Download_FASTQ.md
 │   ├── 02_Quality_Control.md
-|   ├── 04_Trimming.md
+|   ├── 03_Trimming.md
+|   ├── 04_Reference_genome_indexing.md
 │   ├── 05_Alignment_BWA.md
 │   ├── 06_Sort_Index_BAM.md
 │   ├── 07_Mark_Duplicates.md
