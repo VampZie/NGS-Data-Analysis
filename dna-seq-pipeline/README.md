@@ -18,7 +18,7 @@ dna-seq-pipeline/
 │   ├── 03_Reference_Genome_Indexing.md
 │   ├── 04_Alignment_BWA.md
 │   ├── 05_Sort_Index_BAM.md
-│   ├── 06_Add_Read_Groups.md           # NEW STEP
+│   ├── 06_Add_Read_Groups.md        
 │   ├── 07_Mark_Duplicates.md
 │   ├── 08_BaseRecalibration.md
 │   ├── 09_Somatic_Variant_Calling.md   # GATK Mutect2
