@@ -26,10 +26,10 @@ do
           --cores=12
 ```
 
-### 🧾 Parameters Explained
-```-a``` : Adapter sequence for Read 1 ( NOTE: adapter sequence may varies according to your datasets please refer to the Fastqc report )
-```-A``` : Adapter sequence for Read 2 ( NOTE: adapter sequence may varies according to your datasets please refer to the Fastqc report )
-```-o``` : Output file for trimmed Read 1
-```-p``` : Output file for trimmed Read 2
-```--minimum-length``` : Discard reads shorter than threshold
-```--cores``` : Number of threads to use
+### 🧾 Parameters Explained 
+```-a``` : Adapter sequence for Read 1 ( NOTE: adapter sequence may varies according to your datasets please refer to the Fastqc report ) 
+```-A``` : Adapter sequence for Read 2 ( NOTE: adapter sequence may varies according to your datasets please refer to the Fastqc report ) 
+```-o``` : Output file for trimmed Read 1 
+```-p``` : Output file for trimmed Read 2 
+```--minimum-length``` : Discard reads shorter than threshold 
+```--cores``` : Number of threads to use 
