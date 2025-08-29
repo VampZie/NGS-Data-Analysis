@@ -11,9 +11,12 @@ Use BWA-MEM when:
 ## 🛠️ Command
 
 ```bash
-bwa mem -M -t "$th" "$ref" \
-    "${d2}${sample}_1.fq" "${d2}${sample}_2.fq" | \
-    samtools view -b -o "${d1}${sample}.bam" -
+for i in 34 35
+do
+ bwa mem -M -t "$th" "$ref" \
+     "${d2}${sample}_1.fq" "${d2}${sample}_2.fq" | \
+     samtools view -b -o "${d1}${sample}.bam" -
+done
 ```
 
 ###🧾 Parameters Explained
