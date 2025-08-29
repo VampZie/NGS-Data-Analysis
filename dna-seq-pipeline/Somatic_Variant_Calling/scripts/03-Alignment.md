@@ -1,4 +1,4 @@
- # 🔗 Step 03: Read Alignment with BWA-MEM
+ # 🔗 Step 03: Read Alignment with BWA-MEM and convert to .BAM 
 
 ## 🎯 Why Do We Do It?
 Alignment maps sequencing reads to the reference genome to produce **BAM files** for downstream variant calling. `bwa mem` is widely used for short-read DNA alignment due to its speed and accuracy. The output BAM is compressed and indexed for efficient processing.
