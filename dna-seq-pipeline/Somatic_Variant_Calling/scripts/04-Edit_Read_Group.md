@@ -25,7 +25,7 @@ do
 done
 ```
 
-###🧾 Parameters Explained  
+### 🧾 Parameters Explained  
 ```-I``` : Input BAM file 
 
 ```-O``` : Output BAM file with updated read groups 
