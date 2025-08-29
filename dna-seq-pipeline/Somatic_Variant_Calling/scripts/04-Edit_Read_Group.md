@@ -26,16 +26,14 @@ done
 ```
 
 ###🧾 Parameters Explained  
--I : Input BAM file 
+```-I``` : Input BAM file 
 
--O : Output BAM file with updated read groups 
+```-O``` : Output BAM file with updated read groups 
 
--RGID : Read Group ID (unique for each sample/run)  
+```-RGLB``` : Read Group Library (e.g., lib1) 
 
--RGLB : Read Group Library (e.g., lib1) 
+```-RGPL``` : Platform used (e.g., illumina) 
 
--RGPL : Platform used (e.g., illumina) 
+```-RGPU``` : Platform Unit (flowcell + lane info, here ${sample}.unit1) 
 
--RGPU : Platform Unit (flowcell + lane info, here ${sample}.unit1) 
-
--RGSM : Sample name (links reads to biological sample)
+```-RGSM``` : Sample name (links reads to biological sample)
